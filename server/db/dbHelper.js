@@ -7,10 +7,9 @@ const db = mongoose.connect('mongodb://localhost/mosaic',
 const schema = new mongoose.Schema({
   name: String,
   rating: String,
-  city: String,
-  state: String,
+  location: String,
   superhost: String,
-  imageURL: String,
+  imageURL: Array,
   locationID: Number
 });
 

@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 /////////////////////////////////////////
 const { db, getAll, insert } = require('./db/dbHelper.js');
-
+const seed = require('./db/seed.js');
 
 
 app.use(express.static('LOCATION GOES HERE'));
