@@ -10,14 +10,13 @@ const schema = new mongoose.Schema({
   location: String,
   superhost: String,
   imageURL: Array,
-  locationID: Number
 });
 
 //////////////////////////////////////////////////
 const Photos = mongoose.model('Photos', schema);
-const seed = require('./seed.js');
+// const seed = require('./seed.js');
 ///FUNCTIONS TO INTERACT WITH DB//////////////////
-const insert = () => {
+const insert = (seed) => {
   Photos.create(seed)
     .then((data) => {
       console.log('GO CHECK THAT DB')
