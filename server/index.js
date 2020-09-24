@@ -6,7 +6,9 @@ const port = 1000;
 
 
 
-
+app.get('/mosaic', (req, res) => {
+  res.send('mosaic')
+})
 
 
 app.listen(port, () => {
