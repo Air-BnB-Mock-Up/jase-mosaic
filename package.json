@@ -5,6 +5,7 @@
   "main": "/server/index.js",
   "scripts": {
     "start": "nodemon server/index.js",
+    "buildDB": "node server/db/seed.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

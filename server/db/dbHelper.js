@@ -14,7 +14,6 @@ const schema = new mongoose.Schema({
 
 //////////////////////////////////////////////////
 const Photos = mongoose.model('Photos', schema);
-// const seed = require('./seed.js');
 ///FUNCTIONS TO INTERACT WITH DB//////////////////
 const insert = (seed) => {
   Photos.create(seed)
