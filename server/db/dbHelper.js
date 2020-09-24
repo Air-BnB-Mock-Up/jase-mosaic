@@ -1,6 +1,8 @@
+//////////////////////////////////////////////////////////
 const mongoose = require('mongoose');
-const db = mongoose.connect('mongodb://localhost/mosaic');
-
+const db = mongoose.connect('mongodb://localhost/mosaic',
+{ useNewUrlParser: true, useUnifiedTopology: true });
+//////////////////////////////////////////////////////////
 
 const schema = new mongoose.Schema({
   name: String,
@@ -12,22 +14,12 @@ const schema = new mongoose.Schema({
   locationID: Number
 });
 
-
+//////////////////////////////////////////////////
 const Photos = mongoose.model('Photos', schema);
-
+const seed = require('./seed.js');
+///FUNCTIONS TO INTERACT WITH DB//////////////////
 const insert = () => {
-
-  let test = {
-    name: 'Luxury High Rise',
-    rating: '7/10',
-    city: 'Las Vegas',
-    state: 'Nevada',
-    superhost: 'No',
-    imageURL: 'fakeimageurl.com',
-    locationID: 20
-  }
-
-  Photos.create(test)
+  Photos.create(seed)
     .then((data) => {
       console.log('GO CHECK THAT DB')
     })
@@ -35,5 +27,18 @@ const insert = () => {
       console.log(err, 'ERROR INSERTING')
     })
 }
-
-// insert();
+/////////////////////////////////////////////////////
+const getAll = () => {
+  return Photos.find()
+    .then((photos) => {
+      console.log(photos);
+      return photos;
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+}
+///////////////////////////////////
+module.exports.getAll = getAll;
+module.exports.insert = insert;
+///////////////////////////////////
