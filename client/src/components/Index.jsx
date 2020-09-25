@@ -3,20 +3,20 @@ import ReactDOM from 'react-dom';
 
 class AppPhotos extends React.Component {
   constructor(props) {
-
+    super(props);
     this.state = {
       photos: [],
       listing: {}
     }
   }
   componentDidMount() {
-    console.log('hello')
 
   }
 
   render() {
     return (
       <div>
+        {console.log('hello')}
         <p>this is where info goes</p>
         <div>this is where photos go</div>
       </div>
@@ -24,4 +24,4 @@ class AppPhotos extends React.Component {
   }
 }
 
-ReactDOM.render(<AppPhotos/>, document.getElementById('app'))
+ReactDOM.render(<AppPhotos/>, document.getElementById('app'));
