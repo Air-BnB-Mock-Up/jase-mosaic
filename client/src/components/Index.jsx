@@ -1,7 +1,14 @@
+////////////////////////////////////////
+// DEPENDENCIES ////////////////////////
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import getInfo from '../httpHandler.js'
+////////////////////////////////////////
+// HELPER FUNCTIONS ////////////////////
+import getInfo from '../httpHandler.js';
+////////////////////////////////////////
+// REACT ELEMENTS //////////////////////
+import Info from './info.jsx';
 
 class AppPhotos extends React.Component {
   constructor(props) {
@@ -19,7 +26,7 @@ class AppPhotos extends React.Component {
   render() {
     return (
       <div>
-        <p>this is where info goes</p>
+        <Info />
         <div>this is where photos go</div>
       </div>
     )
