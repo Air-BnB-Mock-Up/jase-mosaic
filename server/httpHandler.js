@@ -12,7 +12,7 @@ const db = require('./db/dbIndex.js');
 const { insert, getAll } = require('./db/dbHelper.js')
 /////////////////////////////////////////
 
-app.use(express.static('LOCATION GOES HERE'));
+app.use(express.static(path.join(__dirname + '/../client/dist')));
 
 /////////////////////////////////////////
 // HTTP Handlers ///////////////////////
