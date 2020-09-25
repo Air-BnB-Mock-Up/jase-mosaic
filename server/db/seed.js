@@ -34,7 +34,7 @@ class Seed {
 
 for (let x = 0; x < 100; x++) {
   let seed = new Seed();
-  // insert(seed)
+  insert(seed)
 }
 let seed = new Seed();
 console.log(seed)

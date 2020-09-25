@@ -1,7 +1,5 @@
 //////////////////////////////////////////////////////////
 const mongoose = require('mongoose');
-const db = mongoose.connect('mongodb://localhost/mosaic',
-{ useNewUrlParser: true, useUnifiedTopology: true });
 //////////////////////////////////////////////////////////
 
 const schema = new mongoose.Schema({
@@ -14,11 +12,14 @@ const schema = new mongoose.Schema({
 
 //////////////////////////////////////////////////
 const Photos = mongoose.model('Photos', schema);
+
+module.exports.Photos = Photos;
 ///FUNCTIONS TO INTERACT WITH DB//////////////////
 const insert = (seed) => {
-  Photos.create(seed)
+  return Photos.create(seed)
     .then((data) => {
       console.log('GO CHECK THAT DB')
+      return 'inserted'
     })
     .catch((err) => {
       console.log(err, 'ERROR INSERTING')

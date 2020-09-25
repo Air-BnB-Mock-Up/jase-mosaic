@@ -1,13 +1,16 @@
 /////////////////////////////////////////
+// Server set up
 const express = require('express');
 const app = express();
 const port = 1000;
 /////////////////////////////////////////
+// Dependencies
 const bodyParser = require('body-parser');
 const path = require('path');
 /////////////////////////////////////////
-const { db, getAll, insert } = require('./db/dbHelper.js');
-
+// Initializing
+const db = require('./db/dbIndex.js');
+/////////////////////////////////////////
 
 app.use(express.static('LOCATION GOES HERE'));
 
