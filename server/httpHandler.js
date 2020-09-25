@@ -21,6 +21,7 @@ app.get('/mosaic', (req, res) => {
   return getAll()
     .then((data) => {
       data = JSON.stringify(data);
+      console.log('goodbye')
       res.send(data)
     })
     .catch((err) => {

@@ -36,7 +36,9 @@
     "nodemon": "^2.0.4",
     "path": "^0.12.7",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "superagent": "^6.1.0",
+    "supertest": "^4.0.2"
   },
   "devDependencies": {
     "jest": "^26.4.2",
