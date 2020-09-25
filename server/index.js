@@ -1,34 +1,9 @@
 /////////////////////////////////////////
-const express = require('express');
-const app = express();
+// START SERVER /////////////////////////
+const app = require('./httpHandler');
 const port = 1000;
-/////////////////////////////////////////
-const bodyParser = require('body-parser');
-const path = require('path');
-/////////////////////////////////////////
-const { db, getAll, insert } = require('./db/dbHelper.js');
+  app.listen(port, () => {
+    console.log(`Served on localhost:${port}`);
+  })
 
 
-
-app.use(express.static('LOCATION GOES HERE'));
-
-
-
-
-
-app.get('/mosaic', (req, res) => {
-  return getAll()
-    .then((data) => {
-      data = JSON.stringify(data);
-      res.send(data)
-    })
-    .catch((err) => {
-      res.header(400)
-      res.end()
-    })
-})
-
-
-app.listen(port, () => {
-  console.log(`Served on localhost:${port}`);
-})
