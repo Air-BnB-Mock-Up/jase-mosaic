@@ -1,5 +1,26 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import App_Photos from './App.jsx'
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-// ReactDOM.render(App_Photos, document.getElementById('app'))
+class AppPhotos extends React.Component {
+  constructor(props) {
+
+    this.state = {
+      photos = [];
+      listing = {};
+    }
+  }
+  componentDidMount() {
+    console.log('hello')
+
+  }
+
+  render() {
+    return (<div>
+        <p>this is where info goes</p>
+        <div>this is where photos go</div>
+      </div>
+    )
+  }
+}
+
+ReactDOM.render(AppPhotos, document.getElementById('app'))
