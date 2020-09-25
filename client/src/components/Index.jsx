@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
+import getInfo from '../httpHandler.js'
 
 class AppPhotos extends React.Component {
   constructor(props) {
@@ -9,14 +11,14 @@ class AppPhotos extends React.Component {
       listing: {}
     }
   }
-  componentDidMount() {
 
+  componentDidMount() {
+    getInfo()
   }
 
   render() {
     return (
       <div>
-        {console.log('hello')}
         <p>this is where info goes</p>
         <div>this is where photos go</div>
       </div>
