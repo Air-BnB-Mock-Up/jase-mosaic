@@ -29,7 +29,6 @@ const insert = (seed) => {
 const getAll = () => {
   return Photos.find()
     .then((photos) => {
-      console.log(photos);
       return photos;
     })
     .catch((err) => {
@@ -37,6 +36,9 @@ const getAll = () => {
     })
 }
 ///////////////////////////////////
+const deleteAll = () => {
+  
+}
 module.exports.getAll = getAll;
 module.exports.insert = insert;
 ///////////////////////////////////

@@ -37,7 +37,7 @@ for (let x = 0; x < 100; x++) {
   insert(seed)
 }
 let seed = new Seed();
-console.log(seed)
+console.log('got called again')
 
 
 
