@@ -5,8 +5,8 @@ class AppPhotos extends React.Component {
   constructor(props) {
 
     this.state = {
-      photos = [];
-      listing = {};
+      photos: [],
+      listing: {}
     }
   }
   componentDidMount() {
@@ -15,7 +15,8 @@ class AppPhotos extends React.Component {
   }
 
   render() {
-    return (<div>
+    return (
+      <div>
         <p>this is where info goes</p>
         <div>this is where photos go</div>
       </div>
@@ -23,4 +24,4 @@ class AppPhotos extends React.Component {
   }
 }
 
-ReactDOM.render(AppPhotos, document.getElementById('app'))
+ReactDOM.render(<AppPhotos/>, document.getElementById('app'))
