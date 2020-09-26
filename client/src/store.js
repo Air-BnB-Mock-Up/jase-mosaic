@@ -1,13 +1,18 @@
 
-export const info = {}
+export const info = {
+  name: '',
+  rating: '',
+  location: '',
+  superhost: null,
+}
 export var photos = [];
 
-export const gather = (listings) => {
-  var listing = listings.data[0];
+export const gather = (listing) => {
+  listing = listing.data[0];
   info.name = listing.name;
   info.rating = listing.rating;
   info.location = listing.location;
   info.superhost = listing.superhost;
   photos = photos.concat(listing.imageURL)
-  console.log(info, photos)
+  return ([info, photos])
 }

@@ -1,17 +1,11 @@
 import React from 'react';
 
-class Info extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
+const Info = ({ info }) => {
     return (
       <div id="info-bar">
-        <div> this is now where info goes</div>
+        <span>{info.rating}</span>  <span>{info.superhost}</span>  <span>{info.location}</span>
       </div>
-    )
-  }
-}
+    );
+};
 
 export default Info;

@@ -1,36 +1,46 @@
-////////////////////////////////////////
-// DEPENDENCIES ////////////////////////
+////////////////////////////////////////////
+// DEPENDENCIES ////////////////////////////
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-////////////////////////////////////////
-// HELPER FUNCTIONS ////////////////////
+////////////////////////////////////////////
+// HELPER FUNCTIONS ////////////////////////
 import getInfo from '../httpHandler.js';
-////////////////////////////////////////
-// REACT ELEMENTS //////////////////////
+import {photos, info} from '../store.js';
+////////////////////////////////////////////
+// REACT ELEMENTS //////////////////////////
 import Info from './info.jsx';
-
+import MosaicSmall from './mosaic_small.jsx'
+////////////////////////////////////////////
+// MAIN PAGE ///////////////////////////////
 class AppPhotos extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       photos: [],
-      listing: {}
+      info: info
     }
   }
 
   componentDidMount() {
-    getInfo()
-  }
+    let randomListing =
+    Math.floor(Math.random() * 100);
+    return getInfo(randomListing, (data) => {
+      this.setState({
+        photos: data[1],
+        info: data[0]
+      });
+    });
+  };
 
   render() {
     return (
       <div>
-        <Info />
-        <div>this is where photos go</div>
+        <Info info={this.state.info} />
+        <MosaicSmall photos={this.state.photos} />
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 ReactDOM.render(<AppPhotos/>, document.getElementById('app'));
