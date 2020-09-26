@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "build": "webpack -d --watch",
-    "buildDB": "node server/db/seed.js",
+    "buildDB": "node seed.js",
     "test": "jest --detectOpenHandles"
   },
   "repository": {

@@ -12,11 +12,12 @@ const schema = new mongoose.Schema({
 });
 
 //////////////////////////////////////////////////
-const Photos = mongoose.model('Photos', schema);
+const Photos = mongoose.model('photos', schema);
 
 module.exports.Photos = Photos;
 ///FUNCTIONS TO INTERACT WITH DB//////////////////
 const insert = (seed) => {
+  console.log(seed)
   return Photos.create(seed)
     .then((data) => {
       console.log('GO CHECK THAT DB')

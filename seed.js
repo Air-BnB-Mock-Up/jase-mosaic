@@ -1,17 +1,17 @@
+const app = require('./server/httpHandler.js')
 const faker = require('faker');
-const {db, insert} = require('./dbHelper.js');
+const {Photos, insert} = require('./server/db/dbHelper.js');
+
+
 var count = -1;
 class Seed {
   constructor() {
-    this.name = `${faker.random.catch_phrase_adjective()}
-                 ${faker.random.catch_phrase_descriptor()}
-                 home with a
-                 ${faker.random.bs_buzz()}
-                 ${faker.random.bs_noun()}`;
+    this.name = `${faker.random.catch_phrase_adjective()} ${faker.random.catch_phrase_descriptor()} home with ${faker.random.bs_buzz()} ${faker.random.bs_noun()}`;
     this.rating = `${faker.random.number({min: 1, max: 10})}/10`
     this.location = `${faker.Address.city()}, ${faker.random.us_state_abbr()}`
-    this.superhost = faker.random.boolean;
+    this.superhost = count % 2 === 0 ? true : false;
     this.imageURL = this.randomImages();
+    this.locationID = this.counter()
   }
 
   counter () {
@@ -39,16 +39,16 @@ class Seed {
 
 
 }
-
-
-for (let x = 0; x < 100; x++) {
-  let seed = new Seed();
-  insert(seed)
+const seeder = () => {
+  for (let x = 0; x < 100; x++) {
+    let seed = new Seed();
+    insert(seed)
+  }
 }
-
+seeder()
 
 // let seed = new Seed();
-console.log('got called again')
+
 
 
 
