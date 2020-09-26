@@ -8,6 +8,7 @@ const schema = new mongoose.Schema({
   location: String,
   superhost: String,
   imageURL: Array,
+  locationID: Number
 });
 
 //////////////////////////////////////////////////
@@ -37,7 +38,7 @@ const getAll = () => {
 }
 ///////////////////////////////////
 const deleteAll = () => {
-  
+
 }
 module.exports.getAll = getAll;
 module.exports.insert = insert;
