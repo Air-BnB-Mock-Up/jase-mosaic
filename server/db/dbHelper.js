@@ -28,8 +28,8 @@ const insert = (seed) => {
     })
 }
 /////////////////////////////////////////////////////
-const getAll = () => {
-  return Photos.find()
+const getListing = (locationID) => {
+  return Photos.find({locationID})
     .then((photos) => {
       return photos;
     })
@@ -41,6 +41,6 @@ const getAll = () => {
 const deleteAll = () => {
 
 }
-module.exports.getAll = getAll;
+module.exports.getListing = getListing;
 module.exports.insert = insert;
 ///////////////////////////////////

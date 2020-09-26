@@ -2,9 +2,9 @@ import axios from 'axios';
 import { gather } from './store.js'
 
 
-const getInfo = () => {
+const getInfo = (locationID) => {
 
-  axios.get('/mosaic')
+  axios.get(`/mosaic/${locationID}`)
     .then((data) => {
       gather(data);
     })

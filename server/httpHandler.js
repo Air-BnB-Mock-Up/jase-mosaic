@@ -9,16 +9,16 @@ const path = require('path');
 /////////////////////////////////////////
 // Initializing /////////////////////////
 const db = require('./db/dbIndex.js');
-const { insert, getAll } = require('./db/dbHelper.js')
+const { insert, getListing } = require('./db/dbHelper.js')
 /////////////////////////////////////////
 
 app.use(express.static(path.join(__dirname + '/../client/dist')));
 
 /////////////////////////////////////////
 // HTTP Handlers ///////////////////////
-app.get('/mosaic', (req, res) => {
-  console.log('hello')
-  return getAll()
+app.get('/mosaic/:locationID', (req, res) => {
+  let id = req.params.locationID
+  return getListing(id)
     .then((data) => {
       data = JSON.stringify(data);
       console.log('goodbye')
