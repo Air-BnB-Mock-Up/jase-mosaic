@@ -34,7 +34,7 @@ const getListing = (locationID) => {
       return photos;
     })
     .catch((err) => {
-      console.log(err);
+      console.log('ERROR GETTING');
     })
 }
 ///////////////////////////////////
