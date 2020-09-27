@@ -1,6 +1,6 @@
 ////////////////////////////////////////
 const mongoose = require('mongoose');
-const { insert, getListing } = require('../server/db/dbHelper.js');
+const { insert, getListing } = require('../../server/db/dbHelper.js');
 const tester = 'servertest'
 ////////////////////////////////////////
 // CONNECT TO MOCK DATABASE ////////////

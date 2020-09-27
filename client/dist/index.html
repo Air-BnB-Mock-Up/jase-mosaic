@@ -4,7 +4,68 @@
   </head>
   <body>
     <div id="app"></div>
-    this text should be under both ^^
+    <style>
+
+      #main-frame {
+        border: thin solid black;
+        margin-top: 10%;
+
+      }
+
+      #feature-photo {
+        border: thin solid black;
+        border-top-left-radius: 3%;
+        border-bottom-left-radius: 3%;
+        width: 38%;
+        height: 62vh;
+        margin: .5% .5% 0% 10% ;
+
+        background-size: 100% 100%;
+        float: left;
+      }
+
+      #pic-frame {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        max-width: 40%;
+      }
+
+      .boxes {
+        margin: 1%;
+        grid-column: 'span 1';
+        justify-content: space-evenly;
+        justify-items: auto;
+        max-width: 95%;
+        max-height: 35px;
+        border: medium solid white;
+        padding: 35% 50%;
+        padding-bottom: 30%;
+        background-size: 100% 100%;
+      }
+
+
+      #ms-0 {
+
+      }
+
+      #ms-1 {
+        border-top-right-radius: 6%;
+        margin-left: 5%;
+      }
+
+      #ms-2 {
+      }
+
+      #ms-3 {
+        border-bottom-right-radius: 6%;
+        margin-left: 5%;
+      }
+
+      #ms-3:hover {
+      }
+
+    </style>
     <script src="./bundle.js"></script>
   </body>
 

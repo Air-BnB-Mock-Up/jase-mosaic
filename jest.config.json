@@ -1,0 +1,11 @@
+{
+  "testEnvironment": "node",
+  "verbose": false,
+  "moduleFileExtensions": ["js", "jsx"],
+  "transformIgnorePatterns": [
+    "/node_modules/(?!react)"
+  ],
+  "transform": {
+    "^.+\\.js$": "babel-jest"
+  }
+}

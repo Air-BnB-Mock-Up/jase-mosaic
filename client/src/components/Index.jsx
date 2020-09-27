@@ -13,7 +13,7 @@ import Info from './info.jsx';
 import MosaicSmall from './mosaic_small.jsx'
 ////////////////////////////////////////////
 // MAIN PAGE ///////////////////////////////
-class AppPhotos extends React.Component {
+export class AppPhotos extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,3 +44,4 @@ class AppPhotos extends React.Component {
 };
 
 ReactDOM.render(<AppPhotos/>, document.getElementById('app'));
+

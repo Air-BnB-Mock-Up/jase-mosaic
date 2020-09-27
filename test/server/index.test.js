@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////
 // SUPERTEST + APP = MOCK SERVER ////////////////
 const req = require('supertest');
-const app = require('../server/httpHandler.js');
+const app = require('../../server/httpHandler.js');
 /////////////////////////////////////////////////
 // TESTING SERVER REQUEST ///////////////////////
 describe('API should accept GET request on endpoint: /mosaic/:locationID', () => {
