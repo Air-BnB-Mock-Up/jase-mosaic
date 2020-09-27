@@ -6,10 +6,41 @@
     <div id="app"></div>
     <style>
 
+      @keyframes shade {
+        from {
+          filter: none;
+        }
+        to {
+          filter: brightness(.6)
+        }
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        margin: 0;
+        border: thin solid black;
+        padding: 2.8%;
+      }
+
+      #info-bar {
+        border: thin solid black;
+        width: 80%;
+        margin: 2% auto;
+      }
+
+      #info-name {
+        font-size: 30px;
+      }
+
+      .info {
+        margin: 0% 5%;
+      }
+
       #main-frame {
         border: thin solid black;
-        margin-top: 10%;
-
       }
 
       #feature-photo {
@@ -17,11 +48,18 @@
         border-top-left-radius: 3%;
         border-bottom-left-radius: 3%;
         width: 38%;
-        height: 62vh;
-        margin: .5% .5% 0% 10% ;
+        height: 46vh;
+        margin: .4% .5% 0% 10% ;
 
         background-size: 100% 100%;
         float: left;
+      }
+
+      #feature-photo:hover {
+        animation-name: shade;
+        animation-duration: .5s;
+        animation-fill-mode: forwards;
+        border: medium solid darkgray;
       }
 
       #pic-frame {
@@ -39,14 +77,15 @@
         max-width: 95%;
         max-height: 35px;
         border: medium solid white;
-        padding: 35% 50%;
+        padding: 31.3% 50%;
         padding-bottom: 30%;
         background-size: 100% 100%;
       }
 
-
-      #ms-0 {
-
+      .boxes:hover {
+        animation-name: shade;
+        animation-duration: .5s;
+        animation-fill-mode: forwards;
       }
 
       #ms-1 {
@@ -54,15 +93,9 @@
         margin-left: 5%;
       }
 
-      #ms-2 {
-      }
-
       #ms-3 {
         border-bottom-right-radius: 6%;
         margin-left: 5%;
-      }
-
-      #ms-3:hover {
       }
 
     </style>

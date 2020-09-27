@@ -36,6 +36,7 @@ export class AppPhotos extends React.Component {
   render() {
     return (
       <div>
+        <header>Air BnB</header>
         <Info info={this.state.info} />
         <MosaicSmall photos={this.state.photos} />
       </div>

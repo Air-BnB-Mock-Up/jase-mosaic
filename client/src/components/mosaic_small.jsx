@@ -3,7 +3,9 @@ import React from 'react';
 const MosaicSmall = ({photos}) => {
   let large = photos[0];
   let photoFrame = photos.slice(1, 5);
-  console.log(photoFrame)
+  const boxes = document.getElementsByClassName('boxes')
+
+
   return (
       <div id="main-frame">
         <div id="feature-photo" className="frames" style={{backgroundImage: `url(${large})`}}>
