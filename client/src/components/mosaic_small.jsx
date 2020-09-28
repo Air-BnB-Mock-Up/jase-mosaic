@@ -1,23 +1,29 @@
 import React from 'react';
 
-const MosaicSmall = ({photos}) => {
+const MosaicSmall = ({handleClick, photos}) => {
   let large = photos[0];
   let photoFrame = photos.slice(1, 5);
-  const boxes = document.getElementsByClassName('boxes')
 
 
   return (
       <div id="main-frame">
         <div  id="feature-photo"
               className="frames"
-              style={{backgroundImage: `url(${large})`}}>
+              style={{backgroundImage: `url(${large})`}}
+              onClick={handleClick}
+              >
         </div>
         <div  className="frames"
               id="pic-frame">
-                
-              {photoFrame.map((url, index) => <div style={{ backgroundImage: `url(${url})`} }
+
+              {photoFrame.map((url, index) =>
+              <div style={{ backgroundImage: `url(${url})`} }
                                                    id={ 'ms-' + index }
-                                                   class="boxes" ></div>)}
+                                                   class="boxes"
+                                                   onClick={handleClick}
+                                                   >
+              </div>
+              )}
         </div>
 
       </div>
