@@ -8,14 +8,16 @@ const schema = new mongoose.Schema({
   location: String,
   superhost: String,
   imageURL: Array,
+  locationID: Number
 });
 
 //////////////////////////////////////////////////
-const Photos = mongoose.model('Photos', schema);
+const Photos = mongoose.model('photos', schema);
 
 module.exports.Photos = Photos;
 ///FUNCTIONS TO INTERACT WITH DB//////////////////
 const insert = (seed) => {
+  console.log(seed)
   return Photos.create(seed)
     .then((data) => {
       console.log('GO CHECK THAT DB')
@@ -26,19 +28,19 @@ const insert = (seed) => {
     })
 }
 /////////////////////////////////////////////////////
-const getAll = () => {
-  return Photos.find()
+const getListing = (locationID) => {
+  return Photos.find({locationID})
     .then((photos) => {
       return photos;
     })
     .catch((err) => {
-      console.log(err);
+      console.log('ERROR GETTING');
     })
 }
 ///////////////////////////////////
 const deleteAll = () => {
-  
+
 }
-module.exports.getAll = getAll;
+module.exports.getListing = getListing;
 module.exports.insert = insert;
 ///////////////////////////////////

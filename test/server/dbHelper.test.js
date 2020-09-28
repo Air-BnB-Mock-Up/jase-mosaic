@@ -1,26 +1,28 @@
 ////////////////////////////////////////
 const mongoose = require('mongoose');
-const { insert, getAll } = require('../server/db/dbHelper.js');
+const { insert, getListing } = require('../../server/db/dbHelper.js');
 const tester = 'servertest'
 ////////////////////////////////////////
-// CONNECT TO NEW DATABASE /////////////
+// CONNECT TO MOCK DATABASE ////////////
 beforeAll(async () => {
   await mongoose.connect(`mongodb://localhost/${tester}`,
   { useNewUrlParser: true, useUnifiedTopology: true})
 })
 ////////////////////////////////////////
 // VARIABLES ///////////////////////////
+const locationID = 17
+const invalidID = 101
 const seed = {
   name: 'test',
   rating: '',
   location: '',
   superhost: null,
-  imageURL: []
+  imageURL: [],
+  locationID: locationID
 }
 ////////////////////////////////////////
-// TESTS ///////////////////////////////
+// TESTING DB HELPER FUNCTIONS /////////
 describe('Test database helper functions', () => {
-
   test('expect insert to be a function that passes in object with schema as single parameter', async () => {
     expect(typeof insert).toBe('function');
 
@@ -28,29 +30,24 @@ describe('Test database helper functions', () => {
       .then((data) => {
          expect(data).toBe('inserted')
       })
-  })
-
-  test('expect getAll to be a function that will receive all data from same DB that you insert into', async () => {
-    expect(typeof getAll).toBe('function');
-
-    await insert(seed)
+  });
+  test('expect getListing to be a function that will receive specific data from same DB that you insert into', async () => {
+    expect(typeof getListing).toBe('function');
+    await getListing(locationID)
       .then((data) => {
-         expect(data).toBe('inserted');
-      })
-
-      await insert(seed)
-      .then((data) => {
-         expect(data).toBe('inserted');
-      })
-
-    await getAll()
-      .then((data) => {
-        // AFTER RUNNING PREVIOUS AND CURRENT TEST
-        expect(data.length).toBe(3);
+        expect(data[0].name).toBe('test')
       });
+  });
+  test('expect getListing to behave correctly if passing in invalid ID as argument', async () => {
+    await getListing(invalidID)
+      .then((data) => {
+        expect(data[0].length).toBe(0)
+      })
+      .catch((err) => {
+        expect(typeof err).toBe('object')
+      })
   })
-
-})
+});
 
 /////////////////////////////////////////////////////////
 // MAKES SURE IT DELETES ALL FROM ALL TEST COLLECTIONS //
@@ -64,6 +61,7 @@ async function reFreshTest () {
 // WAITS FOR ALL TESTS TO RUN THEN ERASES
 afterAll(async () => {
   await reFreshTest()
+  mongoose.disconnect()
 })
 ///////////////////////////////////////////////////////////
 

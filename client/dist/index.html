@@ -4,7 +4,91 @@
   </head>
   <body>
     <div id="app"></div>
-    this text should be under both ^^
+    <style>
+
+      @keyframes shade {
+        from {
+          filter: none;
+        }
+        to {
+          filter: brightness(.6)
+        }
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        margin: 0;
+        border: thin solid black;
+        padding: 2%;
+      }
+
+      #info-bar {
+        width: 80%;
+        margin: 1.5% 13%;
+      }
+
+      #info-name {
+        font-size: 30px;
+      }
+
+      .info {
+        margin: 0% 7%;
+      }
+
+      #feature-photo {
+        border-top-left-radius: 3%;
+        border-bottom-left-radius: 3%;
+        width: 36.7%;
+        height: 50.5vh;
+        margin: .2% .25% 0% 13% ;
+        /* border: thin solid white; */
+
+        background-size: 100% 100%;
+        float: left;
+      }
+
+      #feature-photo:hover {
+        animation-name: shade;
+        animation-duration: .5s;
+        animation-fill-mode: forwards;
+      }
+
+      #pic-frame {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        max-width: 37%;
+      }
+
+      .boxes {
+        margin: 1%;
+        /* grid-column: 'span 1'; */
+        justify-content: space-between;
+        /* justify-items: auto; */
+        max-width: 97.3%;
+        height: 24.85vh;
+        /* border: medium solid white; */
+        background-size: 100% 100%;
+      }
+
+      .boxes:hover {
+        animation-name: shade;
+        animation-duration: .5s;
+        animation-fill-mode: forwards;
+      }
+
+      #ms-1 {
+        border-top-right-radius: 6%;
+      }
+
+      #ms-3 {
+        border-bottom-right-radius: 6%;
+      }
+
+    </style>
     <script src="./bundle.js"></script>
   </body>
 
