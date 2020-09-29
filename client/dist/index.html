@@ -38,7 +38,7 @@
 
       .ReactModal__Overlay {
         opacity: 0;
-        transition: all 1s ease-in-out;
+        transition: all .5s ease-in-out;
         transition-property: all
       }
 
@@ -48,6 +48,29 @@
         animation-duration: .3s;
         animation-fill-mode: forwards;
       }
+
+      .top-modal-photos {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        background-size: 100% 100%;
+      }
+
+     #top-modal-photo-0 {
+       float: left;
+       width: 48.95%;
+       height: 62.7vh;
+       margin-right: 1%;
+     }
+
+     #top-modal-photo-1 {
+       margin-bottom: 1%
+     }
+
+     #top-modal-photo-2 {
+       margin-top: 1%;
+     }
+
+
 
       #info-bar {
         width: 80%;
@@ -83,7 +106,7 @@
       #pic-frame {
         display: grid;
         grid-template-columns: 50% 50%;
-        grid-template-rows: 50% 50%;
+        grid-template-rows: 50%;
         max-width: 37%;
       }
 

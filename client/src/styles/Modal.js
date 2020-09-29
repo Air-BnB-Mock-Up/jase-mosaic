@@ -23,12 +23,15 @@ export const ModalStyle = {
   }
 };
 
-export const TopGridOfModal = {
-
+export const TopFrameStyle = {
+  display: 'grid',
+  gridTemplateColumns: '100%',
+  gridTemplateRows: '50% 50%',
+  width: '50%',
+  height: '62.7vh'
 }
 
-export const Feed = {
-  border: 'thin solid black',
-  width: '50%',
+export const FeedStyle = {
+  width: '52.5%',
   margin: 'auto'
 }

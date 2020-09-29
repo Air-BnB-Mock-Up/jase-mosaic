@@ -1,5 +1,6 @@
 import React from 'react';
-import {Feed, TopGridOfModal} from '../styles/Modal.js';
+import {FeedStyle} from '../styles/Modal.js';
+import {TopModal} from './mosaic_top_modal.jsx';
 
 class PhotoFeed extends React.Component {
   constructor(props) {
@@ -14,8 +15,8 @@ class PhotoFeed extends React.Component {
 
   render() {
     return(
-      <div id="photo-feed" style={Feed}>
-        <div ></div>
+      <div id="photo-feed" style={FeedStyle}>
+        <TopModal photos={this.state.topGridPhotos} />
         </div>
     );
   }
