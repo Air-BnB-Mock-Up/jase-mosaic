@@ -5,16 +5,6 @@
   <body>
     <div id="app"></div>
     <style>
-
-      @keyframes shade {
-        from {
-          filter: none;
-        }
-        to {
-          filter: brightness(.6)
-        }
-      }
-
       body {
         margin: 0;
         padding: 0;
@@ -24,6 +14,8 @@
         border: thin solid black;
         padding: 2%;
       }
+
+
 
       @keyframes rise {
         from {
@@ -48,7 +40,23 @@
         animation-duration: .3s;
         animation-fill-mode: forwards;
       }
+      @keyframes shade {
+        from {
+          filter: none;
+        }
+        to {
+          filter: brightness(.85);
+        }
+      }
 
+      .hover-box:hover {
+        animation-name: shade;
+        animation-duration: .5s;
+        animation-fill-mode: forwards;
+      }
+      .hover-box {
+        background-size: 100% 100%;
+      }
       .top-modal-photos {
         display: flex;
         flex-wrap: wrap-reverse;
@@ -121,11 +129,6 @@
         background-size: 100% 100%;
       }
 
-      .boxes:hover {
-        animation-name: shade;
-        animation-duration: .5s;
-        animation-fill-mode: forwards;
-      }
 
       #ms-1 {
         border-top-right-radius: 6%;

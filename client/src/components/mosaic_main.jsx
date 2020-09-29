@@ -8,7 +8,7 @@ const MainMosaic = ({handleClick, photos}) => {
   return (
       <div id="main-frame">
         <div  id="feature-photo"
-              className="frames"
+              className="frames hover-box"
               style={{backgroundImage: `url(${large})`}}
               onClick={handleClick}
               >
@@ -18,7 +18,7 @@ const MainMosaic = ({handleClick, photos}) => {
               {photoFrame.map((url, index) =>
               <div style={{ backgroundImage: `url(${url})`} }
                    id={ 'ms-' + index }
-                   className="boxes"
+                   className="boxes hover-box"
                    onClick={handleClick}
                    key={index}
                   >
