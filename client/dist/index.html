@@ -25,6 +25,30 @@
         padding: 2%;
       }
 
+      @keyframes rise {
+        from {
+          top: 100%;
+          filter: brightness(200);
+        }
+        to {
+          top: 0px;
+          filter: brightness(1);
+        }
+      }
+
+      .ReactModal__Overlay {
+        opacity: 0;
+        transition: all 1s ease-in-out;
+        transition-property: all
+      }
+
+      .ReactModal__Overlay--after-open{
+        opacity: 1;
+        animation-name: rise;
+        animation-duration: .3s;
+        animation-fill-mode: forwards;
+      }
+
       #info-bar {
         width: 80%;
         margin: 1.5% 13%;
