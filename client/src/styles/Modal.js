@@ -22,3 +22,13 @@ export const ModalStyle = {
     padding: '20px'
   }
 };
+
+export const TopGridOfModal = {
+
+}
+
+export const Feed = {
+  border: 'thin solid black',
+  width: '50%',
+  margin: 'auto'
+}

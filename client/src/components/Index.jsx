@@ -6,13 +6,13 @@ import axios from 'axios';
 import Modal from 'react-modal';
 ////////////////////////////////////////////
 // HELPER FUNCTIONS ////////////////////////
-import getInfo from '../httpHandler.js';
+import {getInfo} from '../httpHandler.js';
 import {photos, info} from '../store.js';
 import {ModalStyle} from '../styles/Modal.js';
 ////////////////////////////////////////////
 // REACT ELEMENTS //////////////////////////
 import Info from './info.jsx';
-import MosaicSmall from './mosaic_small.jsx';
+import MainMosaic from './mosaic_main.jsx';
 import PhotoFeed from './photo_feed.jsx';
 
 ////////////////////////////////////////////
@@ -23,10 +23,10 @@ export class AppPhotos extends React.Component {
     this.state = {
       photos: [],
       info: info,
-      width: {width: '100%'}
+      width: {width: '100%'},
+      isOpen: false
     }
     Modal.setAppElement(document.getElementById('app'));
-
     this.clickHandle = this.clickHandle.bind(this);
   }
 
@@ -41,7 +41,7 @@ export class AppPhotos extends React.Component {
     });
   };
 
-  clickHandle(isOpen) {
+  clickHandle() {
     this.setState({
       isOpen: !this.state.isOpen
     });
@@ -55,9 +55,8 @@ export class AppPhotos extends React.Component {
           <button onClick={this.clickHandle}>click me</button>
           <PhotoFeed photos={this.state.photos} />
         </Modal>
-
         <Info info={this.state.info} />
-        <MosaicSmall handleClick={this.clickHandle} photos={this.state.photos} />
+        <MainMosaic handleClick={this.clickHandle} photos={this.state.photos} />
       </div>
     );
   };

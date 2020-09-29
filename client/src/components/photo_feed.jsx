@@ -1,32 +1,23 @@
 import React from 'react';
+import {Feed, TopGridOfModal} from '../styles/Modal.js';
 
 class PhotoFeed extends React.Component {
   constructor(props) {
     super(props);
 
-    this.feed = {
-      border: 'thin solid black',
-      width: '50%',
-      margin: 'auto'
-    }
-
-    this.photo = {
-      height: '15vh',
+    this.state = {
+      topGridPhotos: this.props.photos.slice(0, 3),
+      restOfPhotos: this.props.photos.slice(3)
     }
   }
 
 
   render() {
     return(
-      <div id="photo-feed" style={this.feed}>
-        {this.props.photos.map((url, index) =>
-        <div  style={{ backgroundImage: `url(${url})`,
-              backgroundSize: '100% 100%',
-              height: '55vh',
-              }}
-              >yoo</div>)}
-      </div>
-    )
+      <div id="photo-feed" style={Feed}>
+        <div ></div>
+        </div>
+    );
   }
 }
 
