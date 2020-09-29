@@ -19,12 +19,12 @@ class PhotoFeed extends React.Component {
   render() {
     return(
       <div id="photo-feed" style={this.feed}>
-        {this.props.photos.map((url, index) => <div style={{ backgroundImage: `url(${url})`,
-                                                             backgroundSize: '100% 100%',
-                                                             height: '55vh',
-                                                            }
-
-                                                             }>yoo</div>)}
+        {this.props.photos.map((url, index) =>
+        <div  style={{ backgroundImage: `url(${url})`,
+              backgroundSize: '100% 100%',
+              height: '55vh',
+              }}
+              >yoo</div>)}
       </div>
     )
   }

@@ -19,7 +19,7 @@ const MosaicSmall = ({handleClick, photos}) => {
               {photoFrame.map((url, index) =>
               <div style={{ backgroundImage: `url(${url})`} }
                                                    id={ 'ms-' + index }
-                                                   class="boxes"
+                                                   className="boxes"
                                                    onClick={handleClick}
                                                    >
               </div>

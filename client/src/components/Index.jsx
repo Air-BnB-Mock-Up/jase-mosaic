@@ -47,7 +47,6 @@ export class AppPhotos extends React.Component {
     });
   };
 
-
   render() {
     return (
       <div>
