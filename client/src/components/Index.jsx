@@ -8,12 +8,13 @@ import Modal from 'react-modal';
 // HELPER FUNCTIONS ////////////////////////
 import {getInfo} from '../httpHandler.js';
 import {photos, info} from '../store.js';
-import {ModalStyle, ButtonStyle, ButtonHover, ModalHeaderStyle} from '../styles/Modal.js';
+import {ModalStyle} from '../styles/Modal.js';
 ////////////////////////////////////////////
 // REACT ELEMENTS //////////////////////////
 import Info from './info.jsx';
 import MainMosaic from './mosaic_main.jsx';
-import PhotoFeed from './photo_feed.jsx';
+import PhotoFeed from './modal/photo_feed.jsx';
+import Carousel from './carousel/Carousel.jsx';
 ////////////////////////////////////////////
 // MAIN PAGE ///////////////////////////////
 export class AppPhotos extends React.Component {
@@ -23,10 +24,12 @@ export class AppPhotos extends React.Component {
       photos: [],
       info: info,
       isOpen: false,
-      button: ButtonStyle
+      view: 'cascade-grid',
+      index: 0
     }
     Modal.setAppElement(document.getElementById('app'));
     this.clickHandle = this.clickHandle.bind(this);
+    this.switchViews = this.switchViews.bind(this);
   }
 
   componentDidMount() {
@@ -46,12 +49,18 @@ export class AppPhotos extends React.Component {
     });
   };
 
-  hoverHandle(bool) {
-    var style;
-    bool ? style = ButtonHover : style = ButtonStyle
+  switchViews(view, index) {
     this.setState({
-      button: style
-    })
+      view: view,
+      index: index
+    });
+  }
+  renderViews(view) {
+    if (view === 'carousel') {
+      return <Carousel photos={this.state.photos} indexStart={this.state.index} />;
+    } else if (view === 'cascade-grid') {
+      return <PhotoFeed handleClick={this.clickHandle} switchViews={this.switchViews} photos={this.state.photos} />;
+    }
   }
 
   render() {
@@ -59,10 +68,7 @@ export class AppPhotos extends React.Component {
       <div>
         <header>Air BnB</header>
         <Modal onRequestClose={this.clickHandle} isOpen={this.state.isOpen} style={ModalStyle} >
-          <header style={ModalHeaderStyle}>
-            <button onMouseEnter={() => { this.hoverHandle(true) }} onMouseOver onMouseOut={() => { this.hoverHandle(false)}} onClick={this.clickHandle} style={this.state.button}>{'<'}</button>
-          </header>
-          <PhotoFeed photos={this.state.photos} />
+          {this.renderViews(this.state.view)}
         </Modal>
         <Info info={this.state.info} />
         <MainMosaic handleClick={this.clickHandle} photos={this.state.photos} />
