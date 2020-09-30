@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MosaicSmall = ({handleClick, photos}) => {
+const MainMosaic = ({handleClick, photos}) => {
   let large = photos[0];
   let photoFrame = photos.slice(1, 5);
 
@@ -8,20 +8,20 @@ const MosaicSmall = ({handleClick, photos}) => {
   return (
       <div id="main-frame">
         <div  id="feature-photo"
-              className="frames"
+              className="frames hover-box"
               style={{backgroundImage: `url(${large})`}}
               onClick={handleClick}
               >
         </div>
         <div  className="frames"
               id="pic-frame">
-
               {photoFrame.map((url, index) =>
               <div style={{ backgroundImage: `url(${url})`} }
-                                                   id={ 'ms-' + index }
-                                                   class="boxes"
-                                                   onClick={handleClick}
-                                                   >
+                   id={ 'ms-' + index }
+                   className="boxes hover-box"
+                   onClick={handleClick}
+                   key={index}
+                  >
               </div>
               )}
         </div>
@@ -31,4 +31,4 @@ const MosaicSmall = ({handleClick, photos}) => {
   );
 };
 
-export default MosaicSmall;
+export default MainMosaic;
