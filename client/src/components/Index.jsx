@@ -57,7 +57,7 @@ export class AppPhotos extends React.Component {
   }
   renderViews(view) {
     if (view === 'carousel') {
-      return <Carousel photos={this.state.photos} indexStart={this.state.index} />;
+      return <Carousel switchViews={this.switchViews} photos={this.state.photos} indexStart={this.state.index} />;
     } else if (view === 'cascade-grid') {
       return <PhotoFeed handleClick={this.clickHandle} switchViews={this.switchViews} photos={this.state.photos} />;
     }

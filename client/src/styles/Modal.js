@@ -1,3 +1,5 @@
+////////////////////////////////////////////
+// MODAL INITIALIZATION ////////////////////
 export const ModalStyle = {
   overlay: {
   },
@@ -14,6 +16,8 @@ export const ModalStyle = {
   }
 };
 
+//////////////////////////////////////////////
+// CASCADING GRID STYLING ////////////////////
 export const TopFrameStyle = {
   display: 'grid',
   gridTemplateColumns: '100%',
@@ -53,4 +57,36 @@ export const ModalHeaderStyle = {
   height: '1vh',
   top: '0px',
   zIndex: '100'
+}
+
+//////////////////////////////////////////////
+// CAROUSEL GANG STYLING /////////////////////
+
+export const MainFrame = {
+  backgroundColor: '#fff',
+  width: '60%',
+  height: '80vh',
+  margin: 'auto',
+  marginTop: '5%',
+  padding: '0'
+}
+
+export const Photo = {
+  width: '100%',
+  height: '70vh',
+}
+
+export const Description = {
+  display: 'flex',
+  justifyContent: 'center',
+  fontSize: '18px',
+  padding: '1%',
+  marginTop: '2%'
+}
+
+export const CountOf = {
+  display: 'flex',
+  justifyContent: 'center',
+  fontSize: '18px',
+  margin: '0px'
 }
