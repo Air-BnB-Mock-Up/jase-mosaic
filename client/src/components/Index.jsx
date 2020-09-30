@@ -8,13 +8,12 @@ import Modal from 'react-modal';
 // HELPER FUNCTIONS ////////////////////////
 import {getInfo} from '../httpHandler.js';
 import {photos, info} from '../store.js';
-import {ModalStyle} from '../styles/Modal.js';
+import {ModalStyle, ButtonStyle, ButtonHover, ModalHeaderStyle} from '../styles/Modal.js';
 ////////////////////////////////////////////
 // REACT ELEMENTS //////////////////////////
 import Info from './info.jsx';
 import MainMosaic from './mosaic_main.jsx';
 import PhotoFeed from './photo_feed.jsx';
-
 ////////////////////////////////////////////
 // MAIN PAGE ///////////////////////////////
 export class AppPhotos extends React.Component {
@@ -23,8 +22,8 @@ export class AppPhotos extends React.Component {
     this.state = {
       photos: [],
       info: info,
-      width: {width: '100%'},
-      isOpen: false
+      isOpen: false,
+      button: ButtonStyle
     }
     Modal.setAppElement(document.getElementById('app'));
     this.clickHandle = this.clickHandle.bind(this);
@@ -47,12 +46,22 @@ export class AppPhotos extends React.Component {
     });
   };
 
+  hoverHandle(bool) {
+    var style;
+    bool ? style = ButtonHover : style = ButtonStyle
+    this.setState({
+      button: style
+    })
+  }
+
   render() {
     return (
       <div>
         <header>Air BnB</header>
         <Modal onRequestClose={this.clickHandle} isOpen={this.state.isOpen} style={ModalStyle} >
-          <button onClick={this.clickHandle}>click me</button>
+          <header style={ModalHeaderStyle}>
+            <button onMouseEnter={() => { this.hoverHandle(true) }} onMouseOver onMouseOut={() => { this.hoverHandle(false)}} onClick={this.clickHandle} style={this.state.button}>{'<'}</button>
+          </header>
           <PhotoFeed photos={this.state.photos} />
         </Modal>
         <Info info={this.state.info} />
