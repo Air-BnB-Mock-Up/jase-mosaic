@@ -90,3 +90,21 @@ export const CountOf = {
   fontSize: '18px',
   margin: '0px'
 }
+
+export const Direction = {
+  Previous: {
+    position: 'absolute',
+    top: '50%',
+    left: '2%',
+    borderRadius: '90%',
+    fontSize: '22px'
+  },
+  Next: {
+    position: 'absolute',
+    top: '50%',
+    right: '2%',
+    borderRadius: '90%',
+    fontSize: '22px'
+  }
+
+}
