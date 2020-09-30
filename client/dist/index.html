@@ -15,7 +15,22 @@
         padding: 2%;
       }
 
+      @keyframes switchPhoto {
+        from {
+          filter: opacity(0)
+        }
+        to {
+          filter: opacity(100);
+        }
+      }
 
+      #main-photo {
+        animation-name: switchPhoto;
+        animation-duration: .4s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-play-state: initial;
+      }
 
       @keyframes rise {
         from {

@@ -1,3 +1,4 @@
+import Carousel from '../components/carousel/Carousel.jsx';
 ////////////////////////////////////////////
 // MODAL INITIALIZATION ////////////////////
 export const ModalStyle = {
@@ -62,13 +63,14 @@ export const ModalHeaderStyle = {
 //////////////////////////////////////////////
 // CAROUSEL GANG STYLING /////////////////////
 
-export const MainFrame = {
+export var MainFrame = {
   backgroundColor: '#fff',
   width: '60%',
   height: '80vh',
   margin: 'auto',
   marginTop: '5%',
-  padding: '0'
+  padding: '0',
+
 }
 
 export const Photo = {
