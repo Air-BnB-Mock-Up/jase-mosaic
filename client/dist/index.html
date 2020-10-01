@@ -15,7 +15,7 @@
         padding: 2%;
       }
 
-      @keyframes switchPhoto {
+      @keyframes carouselStart {
         from {
           filter: opacity(0)
         }
@@ -23,10 +23,11 @@
           filter: opacity(100);
         }
       }
-
       #main-photo {
-        animation-name: switchPhoto;
-        animation-duration: .4s;
+        filter: opacity(0);
+        animation-name: carouselStart;
+        animation-duration: .8s;
+        animation-delay: .5s;
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
         animation-play-state: initial;
@@ -62,6 +63,15 @@
         to {
           filter: brightness(.85);
         }
+      }
+
+      .button-hover:hover {
+        animation-name: shade;
+        animation-duration: .3s;
+        animation-fill-mode: forwards;
+      }
+      .button-hover:focus {
+        outline: none;
       }
 
       .hover-box:hover {

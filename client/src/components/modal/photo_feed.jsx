@@ -42,7 +42,7 @@ class PhotoFeed extends React.Component {
   render() {
     return(
       <div>
-        <header style={ModalHeaderStyle}>
+        <header style={ModalHeaderStyle.cascade}>
             <button onMouseEnter={() => { this.hoverHandle(true) }} onMouseOver onMouseOut={() => { this.hoverHandle(false)}} onClick={this.props.handleClick} style={this.state.button}>{'<'}</button>
         </header>
         <div id="photo-feed" style={FeedStyle}>

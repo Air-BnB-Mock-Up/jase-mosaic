@@ -35,7 +35,7 @@ export const FeedStyle = {
 export const ButtonStyle = {
   backgroundColor: '#fff',
   border: 'none',
-  borderRadius: '90%',
+  borderRadius: '60%',
   position: 'fixed',
   fontWeight: '100',
   fontSize: '30px',
@@ -44,20 +44,28 @@ export const ButtonStyle = {
 export const ButtonHover = {
   backgroundColor: 'lightgray',
   border: 'none',
-  borderRadius: '90%',
+  borderRadius: '60%',
   position: 'fixed',
   fontWeight: '100',
   fontSize: '30px',
 }
 
 export const ModalHeaderStyle = {
-  backgroundColor: '#fff',
-  border: 'none',
-  position: 'fixed',
-  width: '100%',
-  height: '1vh',
-  top: '0px',
-  zIndex: '100'
+  cascade: {
+    backgroundColor: '#fff',
+    border: 'none',
+    position: 'fixed',
+    width: '100%',
+    height: '1vh',
+    top: '0px',
+    zIndex: '100'
+  },
+  carousel: {
+    backgroundColor: '#fff',
+    border: 'none',
+    width: '100%',
+    padding: '.725%',
+  }
 }
 
 //////////////////////////////////////////////
@@ -71,6 +79,15 @@ export var MainFrame = {
   marginTop: '5%',
   padding: '0',
 
+}
+
+export const Exit = {
+  backgroundColor: '#e8e8e8',
+  border: 'none',
+  borderRadius: '15%',
+  padding: '.6% 1.1%',
+  fontSize: '16px',
+  marginLeft: '1.25%'
 }
 
 export const Photo = {
@@ -95,18 +112,24 @@ export const CountOf = {
 
 export const Direction = {
   Previous: {
+    backgroundColor: '#fff',
+    padding: '1% 1.5%',
     position: 'absolute',
     top: '50%',
     left: '2%',
+    border: 'thin solid #e8e8e8',
     borderRadius: '90%',
     fontSize: '22px'
   },
   Next: {
+    backgroundColor: '#fff',
+    padding: '1% 1.5%',
     position: 'absolute',
     top: '50%',
     right: '2%',
-    borderRadius: '90%',
-    fontSize: '22px'
+    border: 'thin solid #e8e8e8',
+    borderRadius: '60%',
+    fontSize: '22px',
   },
   Hidden: {
     display: 'none'

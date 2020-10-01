@@ -1,5 +1,5 @@
 import React from 'react';
-import {MainFrame, Photo, Description, CountOf, Direction} from '../../styles/modal.js'
+import {ModalHeaderStyle, MainFrame, Exit, Photo, Description, CountOf, Direction} from '../../styles/modal.js'
 
 class Carousel extends React.Component {
   constructor(props) {
@@ -46,9 +46,12 @@ class Carousel extends React.Component {
     const currentPhoto = this.state.photos[this.state.index];
     return (
       <div>
-        <button onClick={() => this.props.switchViews('cascade-grid')}>X Close</button>
+        <header style={ModalHeaderStyle.carousel}>
+        </header>
+        <button className="button-hover" style={Exit} onClick={() => this.props.switchViews('cascade-grid')}>X  Close</button>
         <div style={CountOf}>{this.state.index + 1} / {this.state.photos.length}</div>
         <button id="left-button"
+                className="button-hover"
                 onClick={() => {this.switchPhoto(-1)}}
                 style={this.state.index !== 0 ? Direction.Previous : Direction.Hidden}
                 >{'<'}
@@ -58,6 +61,7 @@ class Carousel extends React.Component {
           <span style={Description}>The description of this photo is elegantly descripted</span>
         </div>
         <button id="right-button"
+                className="button-hover"
                 onClick={() => this.switchPhoto(1)}
                 style={this.state.index !== this.state.photos.length - 1 ? Direction.Next : Direction.Hidden}
                 >{'>'}
