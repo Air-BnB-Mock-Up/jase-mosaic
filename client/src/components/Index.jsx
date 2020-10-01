@@ -62,9 +62,9 @@ export class AppPhotos extends React.Component {
   };
   renderViews(view) {
     if (view === 'carousel') {
-      return <Carousel switchViews={this.switchViews} photos={this.state.photos} indexStart={this.state.index} />;
+      return <Carousel switchViews={this.switchViews} photos={this.state.photos} indexStart={this.state.index} />
     } else if (view === 'cascade-grid') {
-      return <PhotoFeed handleClick={this.clickHandle} switchViews={this.switchViews} photos={this.state.photos} />;
+      return <PhotoFeed handleClick={this.clickHandle} switchViews={this.switchViews} photos={this.state.photos} />
     };
   };
   ////////////////////////////////////////////
@@ -72,12 +72,19 @@ export class AppPhotos extends React.Component {
   render() {
     return (
       <div>
-        <header>Air BnB</header>
+        <header id="main-header" >
+         <img style={{margin: '0 12.2%', padding: '0', height: '8.5vh', width: '8%', marginTop: '.5%'}} src={'https://jaseairbnbmock.s3-us-west-1.amazonaws.com/FEC/Airbnb_Logo.png'}></img>
+
+            <input style={{position: 'fixed', top: '2.5%', border: 'thin solid #e8e8e8', borderRadius: '90px', margin: 'auto 8%', height: '5vh', width: '18%'}} type={'text'} placeHolder={'      Start your search'}></input>
+            <button style={{position: 'fixed', top: '3.7%', right: '42.5%', height: '3vh', width: '1.7%', backgroundColor: 'red', border: 'none', borderRadius: '90px'}}>&#128269;</button>
+        </header>
         <Modal onRequestClose={this.clickHandle} isOpen={this.state.isOpen} style={ModalStyle}>
           {this.renderViews(this.state.view)}
-        </Modal>;
-        <Info info={this.state.info} />;
-        <MainMosaic handleClick={this.clickHandle} photos={this.state.photos} />;
+        </Modal>
+        <div id="main_page_body">
+          <Info info={this.state.info} />
+          <MainMosaic handleClick={this.clickHandle} photos={this.state.photos} />
+        </div>
       </div>
     );
   };

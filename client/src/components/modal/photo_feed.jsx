@@ -51,7 +51,7 @@ class PhotoFeed extends React.Component {
             <button onMouseEnter={() => { this.hoverHandle(true) }} onMouseOver onMouseOut={() => { this.hoverHandle(false)}} onClick={this.props.handleClick} style={this.state.button}>{'<'}</button>
         </header>
         <div id="photo-feed" style={FeedStyle}>
-          <TopModal handleClick={this.props.switchViews} photos={this.state.topGridPhotos} indexStart={0}/>;
+          <TopModal handleClick={this.props.switchViews} photos={this.state.topGridPhotos} indexStart={0}/>
           <div>
           {this.splitThree(this.state.restOfPhotos).map((threePhotos, index) => <ModalListItem handleClick={this.props.switchViews} photos={threePhotos} indexStart={index + 1} />)}
           </div>
