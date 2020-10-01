@@ -68,7 +68,7 @@ export class AppPhotos extends React.Component {
     };
   };
   ////////////////////////////////////////////
-  // MAIN RENDER MODAL IS DOWN ///////////////
+  // MAIN RENDER / MODAL IS HIDDEN ///////////
   render() {
     return (
       <div>
