@@ -9,15 +9,14 @@ class Carousel extends React.Component {
       index: this.props.indexStart,
       tranStyle: MainFrame,
     }
-
   }
+
   switchPhoto(index) {
     if (this.state.photos[this.state.index + index]) {
       index = index + this.state.index
       this.setState({
         index: index
       })
-
       var container = document.getElementById('photo-container');
       container.style.opacity = '0'
       var level = 0
@@ -29,11 +28,12 @@ class Carousel extends React.Component {
           level += .05;
           container.style.opacity = `${level}`
         }
-        setInterval(raiseOpacity, 50);
+        window.requestAnimationFrame(raiseOpacity);
       }
       return raiseOpacity()
     }
   }
+
   render() {
     console.log(this.state.tranStyle)
     const currentPhoto = this.state.photos[this.state.index];
