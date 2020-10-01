@@ -7,7 +7,7 @@ const schema = new mongoose.Schema({
   rating: String,
   location: String,
   superhost: String,
-  imageURL: Array,
+  imageURL: Object,
   locationID: Number
 });
 

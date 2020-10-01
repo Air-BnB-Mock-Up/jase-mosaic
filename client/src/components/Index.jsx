@@ -21,6 +21,7 @@ export class AppPhotos extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      descriptions: [],
       photos: [],
       info: info,
       isOpen: false,
@@ -40,7 +41,8 @@ export class AppPhotos extends React.Component {
     Math.floor(Math.random() * 100);
     return getInfo(randomListing, (data) => {
       this.setState({
-        photos: data[1],
+        descriptions: data[1].descriptions,
+        photos: data[1].images,
         info: data[0]
       });
     });

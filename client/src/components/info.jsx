@@ -1,6 +1,12 @@
 import React from 'react';
 
 const Info = ({ info }) => {
+      if (info.name) {
+        let listingName = info.name;
+        listingName = listingName.split('');
+        listingName[0] = listingName[0].toUpperCase();
+        info.name = listingName;
+      }
     return (
       <div id="info-bar">
 
