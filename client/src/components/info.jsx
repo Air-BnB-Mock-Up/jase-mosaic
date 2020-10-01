@@ -5,8 +5,9 @@ const Info = ({ info }) => {
         let listingName = info.name;
         listingName = listingName.split('');
         listingName[0] = listingName[0].toUpperCase();
-        info.name = listingName;
+        info.name = listingName.join('')
       }
+      console.log(info.name)
     return (
       <div id="info-bar">
 

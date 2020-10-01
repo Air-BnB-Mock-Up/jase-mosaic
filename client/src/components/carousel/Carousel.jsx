@@ -6,6 +6,7 @@ class Carousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      descriptions: this.props.descriptions,
       photos: this.props.photos,
       index: this.props.indexStart,
       tranStyle: MainFrame,
@@ -37,6 +38,10 @@ class Carousel extends React.Component {
   ///////////////////////////////////////////////////////////////
   render() {
     const currentPhoto = this.state.photos[this.state.index];
+    var currDescript = this.state.descriptions[this.state.index];
+    currDescript = currDescript.split('');
+    currDescript[0] = currDescript[0].toUpperCase();
+    const currentDescription = currDescript.join('');
     return (
       <div>
         <header style={ModalHeaderStyle.carousel}>
@@ -55,7 +60,7 @@ class Carousel extends React.Component {
         </button>
         <div id="photo-container" style={this.state.tranStyle}>
           <img id="main-photo" style={Photo} src={currentPhoto}></img>
-          <span style={Description}>The description of this photo is elegantly descripted</span>
+          <span style={Description}>{currentDescription}</span>
         </div>
         <button id="right-button"
                 className="button-hover"
