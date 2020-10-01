@@ -37,12 +37,11 @@ class Carousel extends React.Component {
         container.style.opacity = `${level}`;
         window.requestAnimationFrame(raiseOpacity);
       };
-      return raiseOpacity()
+      return raiseOpacity();
     };
   };
 
   render() {
-    console.log(this.state.tranStyle)
     const currentPhoto = this.state.photos[this.state.index];
     return (
       <div>

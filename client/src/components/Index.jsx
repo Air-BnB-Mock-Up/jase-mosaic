@@ -26,12 +26,15 @@ export class AppPhotos extends React.Component {
       isOpen: false,
       view: 'cascade-grid',
       index: 0
-    }
+    };
+    ////////////////////////////////////////////
+    // BINDING FUNCTIONS AND MODAL /////////////
     Modal.setAppElement(document.getElementById('app'));
     this.clickHandle = this.clickHandle.bind(this);
     this.switchViews = this.switchViews.bind(this);
-  }
-
+  };
+  ////////////////////////////////////////////
+  // GATHER DATA FROM DATABASE FOR LISTING ///
   componentDidMount() {
     let randomListing =
     Math.floor(Math.random() * 100);
@@ -42,40 +45,42 @@ export class AppPhotos extends React.Component {
       });
     });
   };
-
+  ////////////////////////////////////////////
+  // OPENS AND CLOSES MODAL //////////////////
   clickHandle() {
     this.setState({
       isOpen: !this.state.isOpen
     });
   };
-
+  ////////////////////////////////////////////
+  // SWITCHES BETWEEN CASCADE/CAROUSEL VIEWS /
   switchViews(view, index) {
     this.setState({
       view: view,
       index: index
     });
-  }
+  };
   renderViews(view) {
     if (view === 'carousel') {
       return <Carousel switchViews={this.switchViews} photos={this.state.photos} indexStart={this.state.index} />;
     } else if (view === 'cascade-grid') {
       return <PhotoFeed handleClick={this.clickHandle} switchViews={this.switchViews} photos={this.state.photos} />;
-    }
-  }
-
+    };
+  };
+  ////////////////////////////////////////////
+  // MAIN RENDER MODAL IS DOWN ///////////////
   render() {
     return (
       <div>
         <header>Air BnB</header>
-        <Modal onRequestClose={this.clickHandle} isOpen={this.state.isOpen} style={ModalStyle} >
+        <Modal onRequestClose={this.clickHandle} isOpen={this.state.isOpen} style={ModalStyle}>
           {this.renderViews(this.state.view)}
-        </Modal>
-        <Info info={this.state.info} />
-        <MainMosaic handleClick={this.clickHandle} photos={this.state.photos} />
+        </Modal>;
+        <Info info={this.state.info} />;
+        <MainMosaic handleClick={this.clickHandle} photos={this.state.photos} />;
       </div>
     );
   };
 };
-
 ReactDOM.render(<AppPhotos/>, document.getElementById('app'));
 

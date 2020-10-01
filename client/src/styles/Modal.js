@@ -25,12 +25,12 @@ export const TopFrameStyle = {
   gridTemplateRows: '50% 50%',
   width: '50%',
   height: '62.7vh'
-}
+};
 
 export const FeedStyle = {
   width: '52.5%',
   margin: 'auto'
-}
+};
 
 export const ButtonStyle = {
   backgroundColor: '#fff',
@@ -39,7 +39,7 @@ export const ButtonStyle = {
   position: 'fixed',
   fontWeight: '100',
   fontSize: '30px',
-}
+};
 
 export const ButtonHover = {
   backgroundColor: 'lightgray',
@@ -48,7 +48,7 @@ export const ButtonHover = {
   position: 'fixed',
   fontWeight: '100',
   fontSize: '30px',
-}
+};
 
 export const ModalHeaderStyle = {
   cascade: {
@@ -66,7 +66,7 @@ export const ModalHeaderStyle = {
     width: '100%',
     padding: '.725%',
   }
-}
+};
 
 //////////////////////////////////////////////
 // CAROUSEL GANG STYLING /////////////////////
@@ -79,7 +79,7 @@ export var MainFrame = {
   marginTop: '5%',
   padding: '0',
 
-}
+};
 
 export const Exit = {
   backgroundColor: '#e8e8e8',
@@ -88,12 +88,12 @@ export const Exit = {
   padding: '.6% 1.1%',
   fontSize: '16px',
   marginLeft: '1.25%'
-}
+};
 
 export const Photo = {
   width: '100%',
   height: '70vh',
-}
+};
 
 export const Description = {
   display: 'flex',
@@ -101,14 +101,14 @@ export const Description = {
   fontSize: '18px',
   padding: '1%',
   marginTop: '2%'
-}
+};
 
 export const CountOf = {
   display: 'flex',
   justifyContent: 'center',
   fontSize: '18px',
   margin: '0px'
-}
+};
 
 export const Direction = {
   Previous: {
@@ -135,4 +135,4 @@ export const Direction = {
     display: 'none'
   }
 
-}
+};
