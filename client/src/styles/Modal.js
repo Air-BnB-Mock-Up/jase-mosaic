@@ -107,6 +107,9 @@ export const Direction = {
     right: '2%',
     borderRadius: '90%',
     fontSize: '22px'
+  },
+  Hidden: {
+    display: 'none'
   }
 
 }

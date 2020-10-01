@@ -10,29 +10,36 @@ class Carousel extends React.Component {
       tranStyle: MainFrame,
     }
   }
-
+  ///////////////////////////////////////////////////////////////
+  // ANIMATION ON DIV WHEN LEFT/RIGHT BUTTONS ARE CLICKED ///////
+  ///////////////////////////////////////////////////////////////
   switchPhoto(index) {
+    // IF THE PREVIOUS OR NEXT PHOTO EXISTS
+    // SET STATE OF INDEX WHICH SWITCHES PHOTOS
     if (this.state.photos[this.state.index + index]) {
-      index = index + this.state.index
+      index = index + this.state.index;
       this.setState({
         index: index
-      })
+      });
+      // DECLARE CONTAINER ASSIGN IT TO THE MAIN CONTAINER IN BROWSER
+      // DECLARE LEVEL AND ASSIGN ITS VALUE TO 0; LINK WITH CONTAINER OPACITY
       var container = document.getElementById('photo-container');
-      container.style.opacity = '0'
-      var level = 0
+      var level = 0;
+      container.style.opacity = `${level}`;
+      // DECLARE AND CALL RECURSIVE FUNCTION TO RAISE THE OPACITY LEVEL OF CONTAINER
       var raiseOpacity = () => {
+        // IF OPACITY LEVEL REACHES ONE STOP ANIMATION
         if (level >= 1) {
-          return
-        } else {
-          console.log('up')
-          level += .05;
-          container.style.opacity = `${level}`
-        }
+          return;
+        };
+        // OTHERWISE RAISE BY 5% SMOOTHLY
+        level += .05;
+        container.style.opacity = `${level}`;
         window.requestAnimationFrame(raiseOpacity);
-      }
+      };
       return raiseOpacity()
-    }
-  }
+    };
+  };
 
   render() {
     console.log(this.state.tranStyle)
@@ -41,12 +48,20 @@ class Carousel extends React.Component {
       <div>
         <button onClick={() => this.props.switchViews('cascade-grid')}>X Close</button>
         <div style={CountOf}>{this.state.index + 1} / {this.state.photos.length}</div>
-        <button onClick={() => this.switchPhoto(-1)} style={Direction.Previous}>{'<'}</button>
+        <button id="left-button"
+                onClick={() => {this.switchPhoto(-1)}}
+                style={this.state.index !== 0 ? Direction.Previous : Direction.Hidden}
+                >{'<'}
+        </button>
         <div id="photo-container" style={this.state.tranStyle}>
           <img id="main-photo" style={Photo} src={currentPhoto}></img>
           <span style={Description}>The description of this photo is elegantly descripted</span>
         </div>
-        <button onClick={() => this.switchPhoto(1)} style={Direction.Next}>{'>'}</button>
+        <button id="right-button"
+                onClick={() => this.switchPhoto(1)}
+                style={this.state.index !== this.state.photos.length - 1 ? Direction.Next : Direction.Hidden}
+                >{'>'}
+        </button>
       </div>
     );
   };
