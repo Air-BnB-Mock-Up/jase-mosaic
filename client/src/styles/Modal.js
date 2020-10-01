@@ -84,7 +84,7 @@ export var MainFrame = {
 export const Exit = {
   backgroundColor: '#e8e8e8',
   border: 'none',
-  borderRadius: '15%',
+  borderRadius: '8px',
   padding: '.6% 1.1%',
   fontSize: '16px',
   marginLeft: '1.25%'
