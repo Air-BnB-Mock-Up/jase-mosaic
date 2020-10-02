@@ -74,10 +74,12 @@ export const MainStyles = {
     },
     medal: {
       color: 'transparent',
-      textShadow: '0 0 0 #ff385c'
+      textShadow: '0 0 0 #ff385c',
+      marginLeft: '.4%'
     },
     super: {
-      color: 'grey'
+      color: 'grey',
+      marginRight: '.6%'
     },
     location: {
       color: 'grey',

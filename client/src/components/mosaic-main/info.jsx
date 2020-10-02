@@ -13,7 +13,7 @@ const Info = ({ info }) => {
             {info.rating[0]}
             <span key={5} style={MainStyles.info.totalRatings}> ({info.rating[1]})</span>
           </span>,
-          '\u00b7',
+          '\u00b7' ,
           <span key={6} style={MainStyles.info.superhost}>
           {[<span key={7} style={MainStyles.info.medal}>&#127941;</span>,
             <span key={8} style={MainStyles.info.super}>Superhost</span>]}
