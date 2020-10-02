@@ -36,18 +36,24 @@ export const ButtonStyle = {
   backgroundColor: '#fff',
   border: 'none',
   borderRadius: '60%',
+  transform: 'rotate(270deg)',
   position: 'fixed',
   fontWeight: '100',
-  fontSize: '30px',
+  fontSize: '24px',
+  padding: '0% 0%',
+  outline: 'none'
 };
 
 export const ButtonHover = {
-  backgroundColor: 'lightgray',
+  backgroundColor: '#e8e8e8',
   border: 'none',
-  borderRadius: '60%',
+  borderRadius: '90px',
+  transform: 'rotate(270deg)',
   position: 'fixed',
   fontWeight: '100',
-  fontSize: '30px',
+  fontSize: '24px',
+  padding: '0% 0%',
+  outline: 'none'
 };
 
 export const ModalHeaderStyle = {

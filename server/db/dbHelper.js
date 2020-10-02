@@ -4,10 +4,10 @@ const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
   name: String,
-  rating: String,
+  rating: Array,
   location: String,
   superhost: String,
-  imageURL: Array,
+  imageURL: Object,
   locationID: Number
 });
 
