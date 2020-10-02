@@ -8,7 +8,7 @@ class Seed {
   constructor() {
     console.log(faker)
     this.name = `${faker.hacker.adjective()} ${faker.hacker.ingverb()} home with ${faker.hacker.ingverb()} ${faker.hacker.noun()}`;
-    this.rating = [`${(Math.random() * 10).toFixed(1).toString()}`, `${Math.floor(Math.random() * (500 - 10) + 10)}`]
+    this.rating = [`${(Math.random() * 5).toFixed(1).toString()}`, `${Math.floor(Math.random() * (500 - 10) + 10)}`]
     this.location = `${faker.address.city()}, ${faker.address.state()}`
     this.superhost = count % 2 === 0 ? true : false;
     this.imageURL = this.randomImages();
