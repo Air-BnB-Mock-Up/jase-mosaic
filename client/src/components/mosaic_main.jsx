@@ -6,7 +6,7 @@ const MainMosaic = ({handleClick, photos}) => {
   let large = photos[0];
   let photoFrame = photos.slice(1, 5);
   return (
-      <div id="main-frame" style={{backgroundColor: '#f3f3f3'}}>
+      <div id="main-frame" style={{backgroundColor: '#f3f3f300'}}>
         <div id="feature-photo"
              className="frames hover-box"
              style={{backgroundImage: `url(${large})`}}
