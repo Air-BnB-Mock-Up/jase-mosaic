@@ -1,26 +1,27 @@
 /////////////////////////////////////////////
 import React from 'react';
 /////////////////////////////////////////////
+import {MainStyles} from '../../styles/Mosaic.js';
 // LAYS OUT FIRST 5 PHOTOS IN DYNAMIC GRID //
 const MainMosaic = ({handleClick, photos}) => {
-  let large = photos[0];
+  let largeURL = photos[0];
   let photoFrame = photos.slice(1, 5);
   return (
-      <div id="main-frame" style={{backgroundColor: '#f3f3f300'}}>
-        <div id="feature-photo"
-             className="frames hover-box"
-             style={{backgroundImage: `url(${large})`}}
+      <div style={MainStyles.photos.container}>
+        <img className="hover-box"
+             style={MainStyles.photos.large}
+             src={largeURL}
              onClick={handleClick}>
-        </div>
-        <div className="frames"
-             id="pic-frame">
+        </img>
+        <div style={MainStyles.photos.fourFrames}>
           {photoFrame.map((url, index) =>
-          <div style={{ backgroundImage: `url(${url})`} }
+          <img style={MainStyles.photos.frame}
+               src={url}
                 id={ 'ms-' + index }
-                className="boxes hover-box"
+                className="hover-box"
                 onClick={handleClick}
                 key={index}>
-          </div>)}
+          </img>)}
         </div>
       </div>
   );
