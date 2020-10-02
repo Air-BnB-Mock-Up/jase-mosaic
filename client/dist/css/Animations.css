@@ -1,0 +1,69 @@
+@keyframes carouselStart {
+  from {
+    filter: opacity(0)
+  }
+  to {
+    filter: opacity(100);
+  }
+}
+
+#main-photo {
+  filter: opacity(0);
+  animation-name: carouselStart;
+  animation-duration: .8s;
+  animation-delay: .5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: initial;
+}
+
+
+@keyframes rise {
+  from {
+    top: 100%;
+    filter: brightness(200);
+  }
+  to {
+    top: 0px;
+    filter: brightness(1);
+  }
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: all .5s ease-in-out;
+  transition-property: all
+}
+.ReactModal__Overlay--after-open{
+  opacity: 1;
+  animation-name: rise;
+  animation-duration: .3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes shade {
+  from {
+    filter: none;
+  }
+  to {
+    filter: brightness(.85);
+  }
+}
+
+.button-hover:hover {
+  animation-name: shade;
+  animation-duration: .3s;
+  animation-fill-mode: forwards;
+}
+.button-hover:focus {
+  outline: none;
+}
+
+.hover-box {
+  background-size: 100% 100%;
+}
+.hover-box:hover {
+  animation-name: shade;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+}

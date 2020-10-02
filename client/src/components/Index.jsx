@@ -9,12 +9,14 @@ import Modal from 'react-modal';
 import {getInfo} from '../httpHandler.js';
 import {photos, info} from '../store.js';
 import {ModalStyle} from '../styles/Modal.js';
+import {MainStyles} from '../styles/mosaic.js';
 ////////////////////////////////////////////
 // REACT ELEMENTS //////////////////////////
-import Info from './info.jsx';
-import MainMosaic from './mosaic_main.jsx';
+import Info from './mosaic-main/info.jsx';
+import MainMosaic from './mosaic-main/mosaic_main.jsx';
 import PhotoFeed from './modal/photo_feed.jsx';
 import Carousel from './carousel/Carousel.jsx';
+import MockHeader from './mosaic-main/header.jsx';
 ////////////////////////////////////////////
 // MAIN PAGE ///////////////////////////////
 export class AppPhotos extends React.Component {
@@ -70,16 +72,11 @@ export class AppPhotos extends React.Component {
     };
   };
   ////////////////////////////////////////////
-  // MAIN RENDER MODAL IS DOWN ///////////////
+  // MAIN RENDER / MODAL IS HIDDEN ///////////
   render() {
     return (
       <div>
-        <header id="main-header" >
-         <img style={{margin: '0 12.2%', padding: '0', height: '8.5vh', width: '8%', marginTop: '.5%'}} src={'https://jaseairbnbmock.s3-us-west-1.amazonaws.com/FEC/Airbnb_Logo.png'}></img>
-
-            <input style={{position: 'fixed', top: '2.5%', border: 'thin solid #e8e8e8', borderRadius: '90px', margin: 'auto 8%', height: '5vh', width: '18%'}} type={'text'} placeholder={'      Start your search'}></input>
-            <button style={{boxSizing: 'border-box', position: 'fixed', top: '3.7%', right: '42.5%', height: '3vh', width: '1.7%', backgroundColor: '#ff385c', border: 'none', borderRadius: '90px'}}><span style={{fontSize: '80%'}}>&#x1F50D;</span></button>
-        </header>
+        <MockHeader />
         <Modal onRequestClose={this.clickHandle} isOpen={this.state.isOpen} style={ModalStyle}>
           {this.renderViews(this.state.view)}
         </Modal>
