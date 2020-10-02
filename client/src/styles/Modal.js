@@ -40,7 +40,7 @@ export const ButtonStyle = {
   position: 'fixed',
   fontWeight: '100',
   fontSize: '24px',
-  padding: '0% 0%',
+  padding: '0% 0%:',
   outline: 'none'
 };
 

@@ -75,7 +75,7 @@ export class AppPhotos extends React.Component {
     return (
       <div>
         <header id="main-header" >
-         <img style={{margin: '0 12.2%', padding: '0', height: '8.5vh', width: '8%', marginTop: '.5%'}} src={'https://jaseairbnbmock.s3-us-west-1.amazonaws.com/FEC/Airbnb_Logo.png'}></img>
+         <img style={{margin: '0 13% 0 10.5%', padding: '0', height: '8.5vh', width: '8%', marginTop: '.5%'}} src={'https://jaseairbnbmock.s3-us-west-1.amazonaws.com/FEC/Airbnb_Logo.png'}></img>
 
             <input style={{position: 'fixed', top: '2.5%', border: 'thin solid #e8e8e8', borderRadius: '90px', margin: 'auto 8%', height: '5vh', width: '18%'}} type={'text'} placeholder={'      Start your search'}></input>
             <button style={{boxSizing: 'border-box', position: 'fixed', top: '3.7%', right: '42.5%', height: '3vh', width: '1.7%', backgroundColor: '#ff385c', border: 'none', borderRadius: '90px'}}><span style={{fontSize: '80%'}}>&#x1F50D;</span></button>
