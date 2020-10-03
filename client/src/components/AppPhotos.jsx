@@ -5,8 +5,8 @@ import Modal from 'react-modal';
 import axios from 'axios';
 ////////////////////////////////////////////
 // HELPER FUNCTIONS ////////////////////////
-import {getInfo} from '../httpHandler.js';
-import {photos, info} from '../store.js';
+import {getInfo} from '../helpers/httpHandler.js';
+import {photos, info} from '../helpers/store.js';
 import {ModalStyle} from '../styles/Modal.js';
 import {MainStyles} from '../styles/mosaic.js';
 ////////////////////////////////////////////
