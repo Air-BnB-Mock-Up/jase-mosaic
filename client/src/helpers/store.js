@@ -19,7 +19,7 @@ export const gather = (listing) => {
   return ([info, photos]);
 }
 
-const capitalize = (stringOrArray) => {
+export const capitalize = (stringOrArray) => {
   if (typeof stringOrArray === 'string') {
     let string = stringOrArray;
     string = string.split('');

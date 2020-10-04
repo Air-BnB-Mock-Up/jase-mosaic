@@ -7,7 +7,7 @@
     "start": "nodemon server/index.js",
     "build": "webpack -d --watch",
     "buildDB": "node seed.js",
-    "test": "jest --no-cache --detectOpenHandles --config jest.config.json"
+    "test": "jest --watchAll --no-cache --detectOpenHandles --config jest.config.json"
   },
   "repository": {
     "type": "git",

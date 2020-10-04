@@ -3,7 +3,7 @@ import { gather } from './store.js'
 
 
 export const getInfo = (locationID, bringBack) => {
-  return axios.get(`/mosaic/${locationID}`)
+  return axios.get(`http://localhost:1000/mosaic/${locationID}`)
     .then((data) => {
       return gather(data);
     })

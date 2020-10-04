@@ -85,23 +85,10 @@ export const ModalStyles = {
     backButton: {
       backgroundColor: '#fff',
       border: 'none',
-      borderRadius: '60%',
-      transform: 'rotate(270deg)',
-      position: 'fixed',
+      borderRadius: '30px',
       fontWeight: '100',
-      fontSize: '24px',
-      padding: '0% 0%',
-      outline: 'none'
-    },
-    backButtonHover: {
-      backgroundColor: '#e8e8e8',
-      border: 'none',
-      borderRadius: '90px',
-      transform: 'rotate(270deg)',
-      position: 'fixed',
-      fontWeight: '100',
-      fontSize: '24px',
-      padding: '0% 0%',
+      fontSize: '30px',
+      width: '2.5%',
       outline: 'none'
     }
   },
@@ -257,47 +244,9 @@ export const Direction = {
 
 
 //////////////////////////////
-export const FeedStyle = {
-  width: '52.5%',
-  margin: 'auto'
-};
-export const FeaturePhoto = {
-  float: 'left',
-  width: '48.95%',
-  height: '62.7vh',
-  marginRight: '1%'
-};
-export const DualFrame = {
-  display: 'grid',
-  gridTemplateColumns: '100%',
-  gridTemplateRows: '50% 50%',
-  width: '50%',
-  height: '62.7vh'
-};
 
-export const ButtonStyle = {
-  backgroundColor: '#fff',
-  border: 'none',
-  borderRadius: '60%',
-  transform: 'rotate(270deg)',
-  position: 'fixed',
-  fontWeight: '100',
-  fontSize: '24px',
-  padding: '0% 0%',
-  outline: 'none'
-};
 
-export const ButtonHover = {
-  backgroundColor: '#e8e8e8',
-  border: 'none',
-  borderRadius: '90px',
-  transform: 'rotate(270deg)',
-  position: 'fixed',
-  fontWeight: '100',
-  fontSize: '24px',
-  padding: '0% 0%',
-  outline: 'none'
-};
+
 
 export const ModalHeaderStyle = {
   cascade: {
