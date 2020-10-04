@@ -21,27 +21,56 @@
 @keyframes rise {
   from {
     top: 100%;
-    filter: brightness(200);
   }
   to {
     top: 0px;
-    filter: brightness(1);
   }
 }
 
-.ReactModal__Overlay {
-  opacity: 0;
-  transition: all .5s ease-in-out;
-  transition-property: all
-}
 .ReactModal__Overlay--after-open{
   opacity: 1;
   animation-name: rise;
-  animation-duration: .3s;
+  animation-duration: .6s;
   animation-fill-mode: forwards;
 }
 
-@keyframes shade {
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  opacity: 0;
+  animation-name: appear;
+  animation-delay: .6s;
+  animation-duration: .4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes buttonshade {
+  from {
+    filter: none;
+  }
+  to {
+    filter: brightness(.95);
+  }
+}
+
+
+.button-hover:hover {
+  animation-name: buttonshade;
+  animation-duration: .3s;
+  animation-fill-mode: forwards;
+}
+.button-hover:focus {
+  outline: none;
+}
+
+@keyframes boxshade {
   from {
     filter: none;
   }
@@ -50,20 +79,11 @@
   }
 }
 
-.button-hover:hover {
-  animation-name: shade;
-  animation-duration: .3s;
-  animation-fill-mode: forwards;
-}
-.button-hover:focus {
-  outline: none;
-}
-
 .hover-box {
   background-size: 100% 100%;
 }
 .hover-box:hover {
-  animation-name: shade;
+  animation-name: boxshade;
   animation-duration: .5s;
   animation-fill-mode: forwards;
 }

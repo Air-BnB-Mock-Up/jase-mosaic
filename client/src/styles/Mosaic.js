@@ -8,7 +8,7 @@ export const MainStyles = {
       height: '10vh',
       boxSizing: 'content-box',
       backgroundColor: '#fff',
-      boxShadow: '1px 1px 7px 3px rgb(233 233 233 / 48%)'
+      boxShadow: 'rgba(233, 233, 233, 0.48) 0px 4px 13px 3px'
     },
     logo: {
       margin: '0 13.2% 0 10.5%',
@@ -25,21 +25,23 @@ export const MainStyles = {
       borderRadius: '90px',
       margin: 'auto 8%',
       height: '5vh',
-      width: '18%'
+      width: '18%',
+      boxShadow: '0px 1px 4px darkgrey',
+      outline: 'none'
     },
     button: {
       boxSizing: 'border-box',
       position: 'fixed',
-      top: '3.7%',
+      top: '3.45%',
       right: '42.5%',
-      height: '3vh',
-      width: '1.7%',
+      height: '3.6vh',
+      width: '2%',
       backgroundColor: '#ff385c',
       border: 'none',
       borderRadius: '90px'
     },
     magnify: {
-      fontSize: '80%'
+      fontSize: '110%'
     }
   },
   /////////////////////////
@@ -49,10 +51,11 @@ export const MainStyles = {
     bar: {
       width: '80%',
       margin: '1.5% 11%',
-      marginTop: '1.6%'
+      marginTop: '2%'
     },
     name: {
-      fontSize: '27px'
+      fontSize: '26px',
+      fontWeight: '1000',
     },
     icons: {
       marginTop: '1%'
@@ -83,9 +86,10 @@ export const MainStyles = {
     },
     location: {
       color: 'grey',
-      textDecorationLine: 'underline',
       margin: '0% .8%',
-      fontSize: '14px'
+      fontSize: '14px',
+      textDecoration: 'none',
+      borderBottom: 'thin solid'
     }
   },
   /////////////////////////
