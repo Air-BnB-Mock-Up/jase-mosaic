@@ -1,7 +1,7 @@
 /////////////////////////////////////////////
 import React from 'react';
 /////////////////////////////////////////////
-import {FeedStyle, ModalHeaderStyle, ButtonStyle, ButtonHover} from '../../styles/Modal.js';
+import {ModalStyles as Styles} from '../../styles/Modal.js';
 /////////////////////////////////////////////
 import {TopModal} from './mosaic_top_modal.jsx';
 import {ModalListItem} from './mosaic_dynamic.jsx';
@@ -13,7 +13,6 @@ class PhotoFeed extends React.Component {
     this.state = {
       topGridPhotos: this.props.photos.slice(0, 3),
       restOfPhotos: this.props.photos.slice(3),
-      button: ButtonStyle
     };
     this.splitThree = this.threeSplitter.bind(this);
   };
@@ -36,7 +35,7 @@ class PhotoFeed extends React.Component {
   // SWITCH BETWEEN BUTTON STYLES IF HOVERED //
   hoverHandle(bool) {
     var style;
-    bool ? style = ButtonHover : style = ButtonStyle
+    // bool ? style = ButtonHover : style = ButtonStyle
     this.setState({
       button: style
     });
@@ -46,14 +45,15 @@ class PhotoFeed extends React.Component {
   // KEEP TRACK OF INDEX FROM SPLIT ARRAY /////
   render() {
     return(
-      <div>
-        <header style={ModalHeaderStyle.cascade}>
-            <button onMouseEnter={() => { this.hoverHandle(true) }} onMouseOver onMouseOut={() => { this.hoverHandle(false)}} onClick={this.props.handleClick} style={this.state.button}>  &#8963;</button>
+      <div className="modal">
+        <header style={Styles.headers.cascade}>
+    <button className="button-hover" onClick={this.props.handleClick} style={Styles.cascade.backButton}>{'<'}</button>
         </header>
-        <div id="photo-feed" style={FeedStyle}>
+        <div id="photo-feed" style={Styles.cascade.feedStyle}>
           <TopModal handleClick={this.props.switchViews} photos={this.state.topGridPhotos} indexStart={0}/>
           <div>
-          {this.splitThree(this.state.restOfPhotos).map((threePhotos, index) => <ModalListItem handleClick={this.props.switchViews} photos={threePhotos} indexStart={index + 1} />)}
+          {this.splitThree(this.state.restOfPhotos).map((threePhotos, index) =>
+          <ModalListItem handleClick={this.props.switchViews} photos={threePhotos} indexStart={index + 1} />)}
           </div>
          </div>
       </div>

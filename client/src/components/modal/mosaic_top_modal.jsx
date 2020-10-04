@@ -1,26 +1,28 @@
 /////////////////////////////////////////////
 import React from 'react';
 /////////////////////////////////////////////
-import {TopFrameStyle} from '../../styles/Modal.js';
+import {ModalStyles as Styles} from '../../styles/Modal.js';
 /////////////////////////////////////////////
 // STATIC MODAL ON TOP OF CASCADING GRIDS ///
 export const TopModal = ({photos, handleClick}) => {
   const [firstURL, ...otherTwo] = photos;
   return(
-    <div>
-      <div id={'top-modal-photo-0'}
-           className="top-modal-photos hover-box"
-           style={ {backgroundImage: `url(${firstURL})`}}
-           onClick={(e) => handleClick('carousel', 0)}>
-      </div>
-      <div id="top-modal-frame" style={TopFrameStyle}>
+    <div style={Styles.cascade.feedPosition}>
+      <img style={Styles.cascade.featurePhoto}
+           className="hover-box"
+           src={firstURL}
+           onClick={(e) => handleClick('carousel', 0)}
+           key={0}>
+      </img>
+      <div id="top-modal-frame" style={Styles.cascade.dualFrame}>
         {otherTwo.map((url, index) =>
-        <div id={`top-modal-photo-${index + 1}`}
-            className="top-modal-photos other-two-photos hover-box"
-            style={{backgroundImage: `url(${url})`}}
-            onClick={() => handleClick('carousel', index + 1)}
-            key={index + 1}>
-        </div>)}
+        <img id={`top-modal-photo-${index + 1}`}
+             className="hover-box"
+             style={{height: '30.8vh', width: '99.95%'}}
+             src={url}
+             onClick={() => handleClick('carousel', index + 1)}
+             key={index + 1}>
+        </img>)}
       </div>
     </div>
   );

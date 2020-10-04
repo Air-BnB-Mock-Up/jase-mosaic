@@ -44,8 +44,7 @@ class Carousel extends React.Component {
     const currentDescription = currDescript.join('');
     return (
       <div>
-        <header style={ModalHeaderStyle.carousel}>
-        </header>
+        <header style={ModalHeaderStyle.carousel}></header>
         <button className="button-hover"
                 style={Exit}
                 onClick={() => this.props.switchViews('cascade-grid')}>
