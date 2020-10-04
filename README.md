@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Project Name
 
 > Air BnB Mock (Service: Photos / Info)
@@ -15,4 +16,5 @@ From within the root directory:
 npm install -g webpack
 npm install
 ```
+
 

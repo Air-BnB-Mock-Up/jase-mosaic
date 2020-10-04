@@ -2,8 +2,8 @@ import axios from 'axios';
 import { gather } from './store.js'
 
 
-const getInfo = (locationID, bringBack) => {
-  return axios.get(`/mosaic/${locationID}`)
+export const getInfo = (locationID, bringBack) => {
+  return axios.get(`http://localhost:1000/mosaic/${locationID}`)
     .then((data) => {
       return gather(data);
     })
@@ -14,6 +14,3 @@ const getInfo = (locationID, bringBack) => {
       console.log(err, 'THIS IS ERROR')
     })
 }
-
-
-export default getInfo;
