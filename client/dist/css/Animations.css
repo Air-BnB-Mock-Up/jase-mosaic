@@ -1,3 +1,4 @@
+/* STYLING FOR ANIMATIONS */
 @keyframes carouselStart {
   from {
     filter: opacity(0)
@@ -17,7 +18,6 @@
   animation-play-state: initial;
 }
 
-
 @keyframes rise {
   from {
     top: 100%;
@@ -30,7 +30,7 @@
 .ReactModal__Overlay--after-open{
   opacity: 1;
   animation-name: rise;
-  animation-duration: .6s;
+  animation-duration: .5s;
   animation-fill-mode: forwards;
 }
 
@@ -60,7 +60,6 @@
   }
 }
 
-
 .button-hover:hover {
   animation-name: buttonshade;
   animation-duration: .3s;
@@ -82,6 +81,7 @@
 .hover-box {
   background-size: 100% 100%;
 }
+
 .hover-box:hover {
   animation-name: boxshade;
   animation-duration: .5s;

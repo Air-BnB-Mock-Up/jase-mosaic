@@ -3,8 +3,8 @@ import React from 'react';
 /////////////////////////////////////////////
 import {ModalStyles as Styles} from '../../styles/Modal.js';
 /////////////////////////////////////////////
-import {TopModal} from './mosaic_top_modal.jsx';
-import {ModalListItem} from './mosaic_dynamic.jsx';
+import StaticGrid from './StaticGrid.jsx';
+import DynamicGrid from './DynamicGrid.jsx';
 /////////////////////////////////////////////
 // FIRST VIEW OF MODAL CASCADING GRIDS //////
 class PhotoFeed extends React.Component {
@@ -32,15 +32,6 @@ class PhotoFeed extends React.Component {
     return newFormat
   };
   /////////////////////////////////////////////
-  // SWITCH BETWEEN BUTTON STYLES IF HOVERED //
-  hoverHandle(bool) {
-    var style;
-    // bool ? style = ButtonHover : style = ButtonStyle
-    this.setState({
-      button: style
-    });
-  };
-  /////////////////////////////////////////////
   // TOP GRID IS STATIC / ALL OTHERS DYNAMIC //
   // KEEP TRACK OF INDEX FROM SPLIT ARRAY /////
   render() {
@@ -50,10 +41,10 @@ class PhotoFeed extends React.Component {
     <button className="button-hover" onClick={this.props.handleClick} style={Styles.cascade.backButton}>{'<'}</button>
         </header>
         <div id="photo-feed" style={Styles.cascade.feedStyle}>
-          <TopModal handleClick={this.props.switchViews} photos={this.state.topGridPhotos} indexStart={0}/>
+          <StaticGrid handleClick={this.props.switchViews} photos={this.state.topGridPhotos} indexStart={0}/>
           <div>
           {this.splitThree(this.state.restOfPhotos).map((threePhotos, index) =>
-          <ModalListItem handleClick={this.props.switchViews} photos={threePhotos} indexStart={index + 1} />)}
+          <DynamicGrid handleClick={this.props.switchViews} photos={threePhotos} indexStart={index + 1} />)}
           </div>
          </div>
       </div>

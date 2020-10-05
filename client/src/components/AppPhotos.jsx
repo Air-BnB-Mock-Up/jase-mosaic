@@ -11,14 +11,13 @@ import {ModalStyle} from '../styles/Modal.js';
 import {MainStyles} from '../styles/mosaic.js';
 ////////////////////////////////////////////
 // REACT ELEMENTS //////////////////////////
-import Info from './mosaic-main/info.jsx';
-import MainMosaic from './mosaic-main/mosaic_main.jsx';
-import PhotoFeed from './modal/photo_feed.jsx';
+import Info from './mosaic-main/Info.jsx';
+import MainMosaic from './mosaic-main/MainMosaic.jsx';
+import PhotoFeed from './modal/PhotoFeed.jsx';
 import Carousel from './carousel/Carousel.jsx';
-import MockHeader from './mosaic-main/header.jsx';
+import MockSearch from './mosaic-main/MockSearch.jsx';
 ////////////////////////////////////////////
 // MAIN COMPONENT //////////////////////////
-////////////////////////////////////////////
 export class AppPhotos extends React.Component {
   constructor(props) {
     super(props);
@@ -83,7 +82,7 @@ export class AppPhotos extends React.Component {
   render() {
     return (
       <div>
-        <MockHeader />
+        <MockSearch />
         <Modal onRequestClose={this.clickHandle} isOpen={this.state.isOpen} style={ModalStyle}>
           {this.renderViews(this.state.view)}
         </Modal>

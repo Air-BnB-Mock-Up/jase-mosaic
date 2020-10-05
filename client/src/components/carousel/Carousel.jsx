@@ -37,11 +37,14 @@ class Carousel extends React.Component {
   };
   ///////////////////////////////////////////////////////////////
   render() {
+    ///////////////////////////////////////////////////////////////
+    // SETS THE CURRENT PHOTO AND CURRENT DESCRIPTION OF VIEW /////
     const currentPhoto = this.state.photos[this.state.index];
     var currDescript = this.state.descriptions[this.state.index];
     currDescript = currDescript.split('');
     currDescript[0] = currDescript[0].toUpperCase();
     const currentDescription = currDescript.join('');
+    ///////////////////////////////////////////////////////////////
     return (
       <div>
         <header style={ModalHeaderStyle.carousel}></header>

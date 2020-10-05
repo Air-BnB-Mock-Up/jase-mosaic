@@ -3,8 +3,8 @@ import React from 'react';
 /////////////////////////////////////////////
 import {ModalStyles as Styles} from '../../styles/Modal.js';
 /////////////////////////////////////////////
-// STATIC MODAL ON TOP OF CASCADING GRIDS ///
-export const TopModal = ({photos, handleClick}) => {
+// STATIC GRID ON TOP OF MODAL //////////////
+const StaticGrid = ({photos, handleClick}) => {
   const [firstURL, ...otherTwo] = photos;
   return(
     <div style={Styles.cascade.feedPosition}>
@@ -27,3 +27,4 @@ export const TopModal = ({photos, handleClick}) => {
     </div>
   );
 };
+export default StaticGrid
