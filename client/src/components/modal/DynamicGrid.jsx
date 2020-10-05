@@ -7,7 +7,7 @@ import {ModalStyles as Styles} from '../../styles/Modal.js';
 // KEEP TRACK OF THE INDEX COUNT ////////////
 // ONCLICK SWITCHES VIEW AT CURRENT PHOTO ///
 /////////////////////////////////////////////
-export const ModalListItem = ({photos, indexStart, handleClick}) => {
+const ModalDynamicGrid = ({photos, indexStart, handleClick}) => {
   const [firstURL, ...otherTwo] = photos;
   indexStart = indexStart * 3;
   return (
@@ -32,3 +32,4 @@ export const ModalListItem = ({photos, indexStart, handleClick}) => {
     </div>
   );
 };
+export default ModalDynamicGrid;
