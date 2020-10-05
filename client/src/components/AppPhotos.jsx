@@ -18,7 +18,7 @@ import Carousel from './carousel/Carousel.jsx';
 import MockSearch from './mosaic-main/MockSearch.jsx';
 ////////////////////////////////////////////
 // MAIN COMPONENT //////////////////////////
-export class AppPhotos extends React.Component {
+class AppPhotos extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -94,3 +94,4 @@ export class AppPhotos extends React.Component {
     );
   };
 };
+export default AppPhotos;

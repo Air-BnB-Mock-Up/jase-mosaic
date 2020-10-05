@@ -156,6 +156,7 @@ export const ModalStyles = {
     }
   }
 }
+
 export const ModalStyle = {
   overlay: {
   },
@@ -171,67 +172,6 @@ export const ModalStyle = {
     outline: 'none',
   }
 };
-
-<<<<<<< HEAD
-//////////////////////////////////////////////
-// CASCADING GRID STYLING ////////////////////
-export const TopFrameStyle = {
-  display: 'grid',
-  gridTemplateColumns: '100%',
-  gridTemplateRows: '50% 50%',
-  width: '50%',
-  height: '62.7vh'
-};
-
-export const FeedStyle = {
-  width: '52.5%',
-  margin: 'auto'
-};
-
-export const ButtonStyle = {
-  backgroundColor: '#fff',
-  border: 'none',
-  borderRadius: '60%',
-  transform: 'rotate(270deg)',
-  position: 'fixed',
-  fontWeight: '100',
-  fontSize: '24px',
-  padding: '0% 0%:',
-  outline: 'none'
-};
-
-export const ButtonHover = {
-  backgroundColor: '#e8e8e8',
-  border: 'none',
-  borderRadius: '90px',
-  transform: 'rotate(270deg)',
-  position: 'fixed',
-  fontWeight: '100',
-  fontSize: '24px',
-  padding: '0% 0%',
-  outline: 'none'
-};
-
-export const ModalHeaderStyle = {
-  cascade: {
-    backgroundColor: '#fff',
-    border: 'none',
-    position: 'fixed',
-    width: '100%',
-    height: '1vh',
-    top: '0px',
-    zIndex: '100'
-  },
-  carousel: {
-    backgroundColor: '#fff',
-    border: 'none',
-    width: '100%',
-    padding: '.725%',
-  }
-};
-=======
->>>>>>> 833b12e470f78b1581ebd7595ccff63fc5f681cd
-
 
 export var MainFrame = {
   backgroundColor: '#fff',
