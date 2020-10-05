@@ -3,7 +3,7 @@ import React from 'react';
 /////////////////////////////////////////////
 import {ModalStyles as Styles} from '../../styles/Modal.js';
 /////////////////////////////////////////////
-// STATIC MODAL ON TOP OF CASCADING GRIDS ///
+// STATIC GRID ON TOP OF MODAL //////////////
 const StaticGrid = ({photos, handleClick}) => {
   const [firstURL, ...otherTwo] = photos;
   return(
