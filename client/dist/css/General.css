@@ -1,6 +1,6 @@
+/* STYLES FOR ROOT ELEMENTS / CLASS GROUPINGS / OR SPECIFIC PARTS OF DYNAMIC RENDERING */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
-
 
 ::placeholder {
   color: 'black';
@@ -21,7 +21,6 @@ header {
   margin: 0;
   padding: 2%;
 }
-
 
 .top-modal-photos {
   display: flex;
@@ -47,7 +46,6 @@ header {
   #two-horizontal-0 {
    margin-right: 1%;
   }
-
 
   #ms-1 {
     border-top-right-radius: 6%;
