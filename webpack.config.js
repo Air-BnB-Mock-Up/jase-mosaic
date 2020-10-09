@@ -1,5 +1,5 @@
 const path = require('path');
-const entry = path.join(__dirname, '/client/src/components/index.jsx');
+const entry = path.join(__dirname, '/client/src/components/Index.jsx');
 const output = path.join(__dirname, '/client/dist');
 
 module.exports = {
