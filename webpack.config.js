@@ -26,5 +26,9 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
     ]
-  }
+  },
+  plugins: [
+    new CompressionPlugin({
+      exclude: /\/excludes/,
+    })],
 }

@@ -103,7 +103,7 @@ export const MainStyles = {
       borderTopLeftRadius: '3%',
       borderBottomLeftRadius: '3%',
       width: '39%',
-      height: '51.8vh',
+      height: '52.8vh',
       margin: '.2% .28% 0% 11.1%',
       backgroundSize: '100% 100%',
       float: 'left'
