@@ -36,8 +36,8 @@ class PhotoFeed extends React.Component {
   // KEEP TRACK OF INDEX FROM SPLIT ARRAY /////
   render() {
     return(
-      <div className="modal">
-        <header style={Styles.headers.cascade}>
+      <div className="modal-photos">
+      <header style={Styles.headers.cascade}>
     <button className="button-hover" onClick={this.props.handleClick} style={Styles.cascade.backButton}>{'<'}</button>
         </header>
         <div id="photo-feed" style={Styles.cascade.feedStyle}>

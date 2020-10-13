@@ -8,7 +8,7 @@ import axios from 'axios';
 import {getInfo} from '../helpers/httpHandler.js';
 import {photos, info} from '../helpers/store.js';
 import {ModalStyle} from '../styles/Modal.js';
-import {MainStyles} from '../styles/mosaic.js';
+import {MainStyles} from '../styles/Mosaic.js';
 ////////////////////////////////////////////
 // REACT ELEMENTS //////////////////////////
 import Info from './mosaic-main/Info.jsx';
@@ -31,7 +31,7 @@ export class AppPhotos extends React.Component {
     };
     ////////////////////////////////////////////
     // BINDING FUNCTIONS AND MODAL /////////////
-    Modal.setAppElement(document.getElementById('app'));
+    Modal.setAppElement(document.getElementById('photos'));
     this.clickHandle = this.clickHandle.bind(this);
     this.switchViews = this.switchViews.bind(this);
   };

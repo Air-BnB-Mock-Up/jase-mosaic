@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////
 import React from 'react';
-import {ModalHeaderStyle, MainFrame, Exit, Photo, Description, CountOf, Direction} from '../../styles/modal.js'
+import {ModalHeaderStyle, MainFrame, Exit, Photo, Description, CountOf, Direction} from '../../styles/Modal.js'
 ///////////////////////////////////////////////////////////////
 class Carousel extends React.Component {
   constructor(props) {

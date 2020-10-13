@@ -19,7 +19,7 @@ export const MainStyles = {
     },
     imgSRC: 'https://jaseairbnbmock.s3-us-west-1.amazonaws.com/FEC/Airbnb_Logo.png',
     input: {
-      position: 'fixed',
+      position: 'absolute',
       top: '2.5%',
       border: 'thin solid #e8e8e8',
       borderRadius: '90px',
@@ -31,7 +31,7 @@ export const MainStyles = {
     },
     button: {
       boxSizing: 'border-box',
-      position: 'fixed',
+      position: 'absolute',
       top: '3.45%',
       right: '42.5%',
       height: '3.6vh',
