@@ -43,7 +43,7 @@
   }
 }
 
-.modal {
+.modal-photos {
   opacity: 0;
   animation-name: appear;
   animation-delay: .6s;

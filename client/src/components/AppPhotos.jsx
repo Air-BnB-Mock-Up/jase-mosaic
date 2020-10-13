@@ -31,7 +31,7 @@ export class AppPhotos extends React.Component {
     };
     ////////////////////////////////////////////
     // BINDING FUNCTIONS AND MODAL /////////////
-    Modal.setAppElement(document.getElementById('app'));
+    Modal.setAppElement(document.getElementById('photos'));
     this.clickHandle = this.clickHandle.bind(this);
     this.switchViews = this.switchViews.bind(this);
   };

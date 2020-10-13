@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////
 const mongoose = require('mongoose');
-const db = mongoose.connect('mongodb://localhost/mosaic',
+const db = mongoose.connect('mongodb://13.57.197.127/mosaic',
 { useNewUrlParser: true, useUnifiedTopology: true });
 //////////////////////////////////////////////////////////

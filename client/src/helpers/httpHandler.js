@@ -3,7 +3,9 @@ import { gather } from './store.js'
 
 
 export const getInfo = (locationID, bringBack) => {
-  return axios.get(`http://localhost:1000/mosaic/${locationID}`)
+  locationID = window.location.href.split('/').pop() ||
+  Math.floor(Math.random() * 100);
+  return axios.get(`http://204.236.190.10:3000/mosaic/${locationID}`)
     .then((data) => {
       return gather(data);
     })
